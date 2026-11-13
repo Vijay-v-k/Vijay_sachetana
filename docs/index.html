@@ -1,7 +1,16 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Sachetana Morning Assembly</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sachetana morning assembly activity calendar 2026-27 for LPS, HPS and HS schools.">
+<link rel="icon" href="mantra-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;600;700;800&family=Baloo+2:wght@600;700;800&family=Noto+Sans+Kannada:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
 <style>
 /* Layout: sunrise header band → level switch → "this morning" strip of 4 days → week + toolkit → photo wall → method → impact. Modals for calendar, details, tools. */
 /* Mantra4Change palette: sky blue + navy from the logo, kept light */
@@ -575,6 +584,9 @@ function week(d){return d&&d.w>=0?DATA[level].weeks[d.w]:null}
 function typeLabel(d){return f(d,"type")||""}
 
 /* ---------- capabilities ---------- */
+const ON_CLAUDE=!!(window.claude&&window.claude.use);
+const LIVE_URL="https://claude.ai/artifact/1DGHkwZftHifoWER1f5yPi";
+function upNoHTML(){return '<div class="err">'+esc(t("upNo"))+(ON_CLAUDE?'':' <a href="'+LIVE_URL+'" target="_blank" rel="noopener">'+esc(LIVE_URL)+'</a>')+'</div>'}
 const caps={};
 function cap(name){if(!caps[name]){caps[name]=(window.claude&&window.claude.use?window.claude.use(name):Promise.resolve(null)).catch(()=>null)}return caps[name]}
 
@@ -758,7 +770,15 @@ function drawCal(){
 /* ---------- downloads ---------- */
 async function saveFile(filename,data,msgEl){
   const dl=await cap("downloads");
-  if(!dl){msgEl.innerHTML='<div class="err">'+esc(t("dlNo"))+'</div>';return}
+  if(!dl){
+    if(!ON_CLAUDE){ // ordinary web hosting (e.g. GitHub Pages): a normal browser download works
+      const blob=data instanceof Blob?data:new Blob([data],{type:filename.endsWith(".csv")?"text/csv":"application/octet-stream"});
+      const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();
+      setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);
+      msgEl.innerHTML='<div class="ok">'+esc(t("saved"))+'</div>';return;
+    }
+    msgEl.innerHTML='<div class="err">'+esc(t("dlNo"))+'</div>';return;
+  }
   try{await dl.save({filename,data});msgEl.innerHTML='<div class="ok">'+esc(t("saved"))+'</div>'}
   catch(e){msgEl.innerHTML='<div class="err">'+esc(e&&e.code==="declined"?t("declined"):(e&&e.message)||t("dlNo"))+'</div>'}
 }
@@ -966,12 +986,12 @@ function openUpload(prefSchool){
   if(prefSchool)document.getElementById("uS").value=prefSchool;
   const uF=document.getElementById("uF");
   uF.onchange=()=>{const fs=[...uF.files].slice(0,5);document.getElementById("uT").innerHTML=fs.map(f=>'<figure><img src="'+URL.createObjectURL(f)+'" alt=""></figure>').join("")};
-  cap("assets").then(a=>{if(!a)document.getElementById("uMsg").innerHTML='<div class="err">'+esc(t("upNo"))+'</div>'});
+  cap("assets").then(a=>{if(!a)document.getElementById("uMsg").innerHTML=upNoHTML()});
   document.getElementById("uBtn").onclick=async()=>{
     const msg=document.getElementById("uMsg"),school=document.getElementById("uS").value.trim(),place=document.getElementById("uP").value.trim(),fs=[...uF.files].slice(0,5);
     if(!school||!fs.length||!document.getElementById("uC").checked){msg.innerHTML='<div class="err">'+esc(t("upNeed"))+'</div>';return}
     const [assets,db]=await Promise.all([cap("assets"),cap("db")]);
-    if(!assets||!db){msg.innerHTML='<div class="err">'+esc(t("upNo"))+'</div>';return}
+    if(!assets||!db){msg.innerHTML=upNoHTML();return}
     const btn=document.getElementById("uBtn");btn.disabled=true;
     try{
       for(let i=0;i<fs.length;i++){
@@ -1056,3 +1076,5 @@ initGallery();
 fetch("calendar-data.json").then(r=>r.json()).then(j=>{DATA=j;renderStrip();if(!store.get("sach-toured",0))setTimeout(startTour,900)}).catch(()=>{document.getElementById("strip").innerHTML='<div class="card err">Calendar data could not load. Refresh the page.</div>'});
 })();
 </script>
+</body>
+</html>

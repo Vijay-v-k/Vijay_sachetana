@@ -2,7 +2,9 @@
 
 An interactive microsite for the **Sachetana** morning assembly programme (Samagra Shikshana Karnataka, DSERT and Mantra4Change; CSR initiative by Bosch and Salesforce).
 
-**Live site:** https://claude.ai/artifact/1DGHkwZftHifoWER1f5yPi
+**Website (GitHub Pages):** https://vijay-v-k.github.io/Vijay_sachetana/
+
+**Full version on claude.ai (with photo uploads):** https://claude.ai/artifact/1DGHkwZftHifoWER1f5yPi
 
 ## What it does
 - Calendars for **LPS**, **HPS** and **HS** (June 2026 – March 2027), with every day's activity and picture
@@ -14,10 +16,10 @@ An interactive microsite for the **Sachetana** morning assembly programme (Samag
 - English, ಕನ್ನಡ and हिंदी, plus a guided Help tour
 
 ## Files
-- `site/index.html` – the page
-- `site/calendar-data.json` – all activities, transcribed from the printed calendars (Kannada with English translation)
-- `site/sprites/` – day pictures, one sheet per level and month
-- `site/photos/` – assembly photos from the calendars
-- `site/pdf/` – the three calendars as smaller PDFs
+- `docs/index.html` – the page
+- `docs/calendar-data.json` – all activities, transcribed from the printed calendars (Kannada with English translation)
+- `docs/sprites/` – day pictures, one sheet per level and month
+- `docs/photos/` – assembly photos from the calendars
+- `docs/pdf/` – the three calendars as smaller PDFs
 
-Photo uploads, downloads and certificates rely on claude.ai, so they work only on the live site link above.
+Photo uploads to the photo wall work only on the claude.ai version. Everything else works on both.
