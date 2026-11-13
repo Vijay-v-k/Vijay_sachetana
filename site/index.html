@@ -1,0 +1,1058 @@
+<title>Sachetana Morning Assembly</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;600;700;800&family=Baloo+2:wght@600;700;800&family=Noto+Sans+Kannada:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: sunrise header band → level switch → "this morning" strip of 4 days → week + toolkit → photo wall → method → impact. Modals for calendar, details, tools. */
+/* Mantra4Change palette: sky blue + navy from the logo, kept light */
+:root{
+  --bg:#F3F9FD; --surface:#FFFFFF; --paper:#EAF6FD; --ink:#1F2F6B; --ink-2:#55658C; --line:#D3E5F2;
+  --leaf:#0A80C2; --leaf-soft:#E2F3FC; --tag-bg:#D3EEFB; --tag-ink:#0A5687; --sun:#1AA7E8; --sun-soft:#D9F0FC; --coral:#283A82;
+  --navy:#283A82; --on-navy:#FFFFFF; --sky:#1AA7E8; --shadow:0 1px 2px rgba(40,58,130,.07),0 6px 18px rgba(26,167,232,.10);
+  color-scheme:light;
+  --f-display:"Baloo Tamma 2","Baloo 2","Noto Sans Kannada","Noto Sans Devanagari",system-ui,sans-serif;
+  --f-body:"Nunito Sans","Noto Sans Kannada","Noto Sans Devanagari",system-ui,sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;margin:0;text-wrap:balance}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);color:var(--ink);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(26,167,232,.08)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-block:8px}
+.homebtn{border:0;background:none;padding:0;display:flex;align-items:center;gap:10px;min-width:0;flex:1;text-align:left;color:inherit}
+.homebtn img{height:38px;width:auto;flex:none}
+.brand{display:flex;align-items:baseline;gap:10px;min-width:0;border-left:2px solid var(--line);padding-left:10px}
+.brand b{font-family:var(--f-display);font-size:28px;font-weight:800;letter-spacing:.2px;color:var(--navy)}
+.brand span{font-size:13px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.navbtn{border:2px solid var(--line);background:var(--surface);color:var(--navy);border-radius:999px;padding:5px 14px;font-weight:700;display:flex;gap:6px;align-items:center}
+.navbtn:hover{border-color:var(--sky)}
+.navbtn svg{width:18px;height:18px}
+.lang{display:flex;background:var(--leaf-soft);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;color:var(--ink);padding:5px 11px;border-radius:999px;font-size:14px;font-weight:600}
+.lang button[aria-pressed="true"]{background:var(--sky);color:#fff}
+.helpbtn{border:2px solid var(--sky);background:var(--sky);color:#fff;border-radius:999px;padding:5px 14px;font-weight:700;display:flex;gap:6px;align-items:center}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--paper) 0,var(--paper) 58%,transparent 58%);color:var(--ink)}
+.hero .wrap{padding-block:22px 0;display:grid;gap:16px}
+.hero h1{font-size:clamp(28px,4.6vw,46px);font-weight:800;color:var(--navy)}
+.hero p{margin:0;max-width:62ch;color:var(--ink-2)}
+.sun{display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--sky);box-shadow:0 0 0 6px rgba(26,167,232,.2);margin-right:10px;vertical-align:.05em}
+.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lvl{border:0;border-radius:var(--r);padding:14px 16px;text-align:left;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);display:grid;gap:2px;position:relative;border-bottom:5px solid transparent}
+.lvl b{font-family:var(--f-display);font-size:26px;font-weight:800;line-height:1}
+.lvl span{font-size:14px;color:var(--ink-2)}
+.lvl small{font-size:12px;font-weight:700;color:var(--leaf);margin-top:4px}
+.lvl[aria-pressed="true"]{border-bottom-color:var(--sun)}
+.lvl[aria-pressed="true"]::after{content:"";position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--sun)}
+
+section{padding-block:28px}
+.sec-h{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-h h2{font-size:clamp(22px,3vw,30px);font-weight:800}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--leaf)}
+.muted{color:var(--ink-2)}
+
+/* strip */
+.strip{display:grid;grid-template-columns:1fr 1.9fr 1fr 1fr;gap:14px;align-items:stretch}
+.card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;border:2px solid transparent;text-align:left}
+.day{transition:opacity .2s,transform .2s;cursor:pointer}
+.day.faded{opacity:.5}
+.day.faded:hover,.day.faded:focus-visible{opacity:.92;transform:translateY(-2px)}
+.day.today{background:var(--paper);border-color:var(--sun);cursor:default;padding:20px}
+.pic{display:block;aspect-ratio:4/3;height:auto;max-width:100%;background-color:#fff;background-repeat:no-repeat;border-radius:10px}
+.dpic{width:min(100%,160px)}
+.today .dpic{width:min(100%,240px)}
+.mpic{width:min(100%,300px);justify-self:center;border-radius:12px}
+.rel{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.today .rel{color:var(--coral)}
+.dnum{display:flex;align-items:baseline;gap:8px}
+.dnum b{font-family:var(--f-display);font-size:34px;font-weight:800;line-height:1}
+.today .dnum b{font-size:52px;color:var(--sun)}
+.dnum span{font-size:14px;color:var(--ink-2);font-weight:600}
+.ttl{font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.25}
+.today .ttl{font-size:clamp(24px,3vw,32px)}
+.tag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:var(--tag-bg);color:var(--tag-ink);font-weight:700;font-size:13px;padding:3px 10px;border-radius:999px}
+.tag svg{width:15px;height:15px}
+.meta{font-size:13px;color:var(--ink-2)}
+.desc{margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:700;display:inline-flex;align-items:center;gap:7px;background:var(--leaf-soft);color:var(--ink)}
+.btn.pri{background:var(--navy);color:var(--on-navy)}
+.btn.sun{background:var(--sun);color:#1D2A44}
+.btn.ghost{background:transparent;border:2px solid var(--line)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.done{background:var(--leaf);color:#fff}
+.noas{font-family:var(--f-display);font-size:18px;font-weight:700;color:var(--ink-2)}
+
+/* week + tools */
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+.week{display:grid;gap:12px}
+.chip{display:inline-block;background:var(--leaf-soft);color:var(--ink);font-weight:700;border-radius:8px;padding:2px 9px;font-size:14px}
+.parent{background:var(--paper);border-radius:12px;padding:12px 14px;display:grid;gap:4px}
+.wkdays{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.wkd{border:0;border-radius:10px;background:var(--bg);padding:8px 6px;text-align:center;font-size:12px;line-height:1.25;min-width:0}
+.wkd b{display:block;font-family:var(--f-display);font-size:20px}
+.wkd.is-today{background:var(--sun);color:#1D2A44}
+.wkd span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tool{border:0;text-align:left;background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;display:grid;gap:6px;align-content:start}
+.tool svg{width:30px;height:30px;color:var(--leaf)}
+.tool b{font-family:var(--f-display);font-size:18px;line-height:1.2}
+.tool span{font-size:14px;color:var(--ink-2)}
+.tool:hover{outline:2px solid var(--sun)}
+
+/* gallery */
+.wall{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(320px,48vw,520px)}
+.spot{position:relative;border-radius:var(--r);overflow:hidden;background:var(--paper);box-shadow:var(--shadow)}
+.spot:first-child{grid-row:1/3}
+.spot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .9s}
+.spot img.out{opacity:0}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;background:linear-gradient(transparent,rgba(10,20,40,.82));color:#fff;display:grid}
+.cap b{font-family:var(--f-display);font-size:18px;line-height:1.2}
+.cap span{font-size:13px;opacity:.85}
+.timer{position:absolute;top:10px;right:10px;height:4px;width:60px;border-radius:4px;background:rgba(255,255,255,.35);overflow:hidden}
+.timer i{display:block;height:100%;background:#FFD877;width:0}
+@media (prefers-reduced-motion:no-preference){.timer i.run{animation:fill 10s linear}}
+@keyframes fill{to{width:100%}}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:s}
+.step{background:var(--surface);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);display:grid;gap:6px;align-content:start}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--f-display);font-weight:800}
+.step h3{font-size:20px}
+.step p{margin:0;font-size:14px;color:var(--ink-2)}
+.impact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{border-top:4px solid var(--leaf);padding-top:10px}
+.stat b{font-family:var(--f-display);font-size:clamp(28px,3.6vw,40px);font-weight:800;line-height:1;display:block;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--ink-2)}
+footer{background:var(--surface);margin-top:20px}
+footer .wrap{padding-block:22px;display:grid;gap:12px;justify-items:center;text-align:center}
+.partners{background:#fff;border-radius:12px;padding:8px 12px;max-width:640px;width:100%}
+.partners img{display:block;width:100%}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(8,16,32,.6);display:flex;align-items:flex-start;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));overflow:auto}
+.panel{background:var(--surface);color:var(--ink);border-radius:18px;width:100%;max-width:980px;box-shadow:0 20px 60px rgba(0,0,0,.35);position:relative;margin-block:auto}
+.panel.sm{max-width:620px}
+.ph{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);border-radius:18px 18px 0 0;z-index:2}
+.ph h3{font-size:22px;flex:1;min-width:0}
+.x{border:0;background:var(--bg);width:38px;height:38px;border-radius:50%;font-size:22px;line-height:1;flex:none}
+.pb{padding:18px;display:grid;gap:14px}
+.field{display:grid;gap:4px}
+.field label{font-weight:700;font-size:14px}
+.field input,.field select{border:2px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--bg);width:100%;min-width:0}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.note{font-size:13px;color:var(--ink-2)}
+.ok{background:var(--leaf-soft);border-radius:10px;padding:10px 12px;font-size:14px}
+.err{background:color-mix(in srgb,var(--coral) 16%,transparent);border-radius:10px;padding:10px 12px;font-size:14px}
+ul.list{margin:0;padding-left:20px;display:grid;gap:4px}
+.phase{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:start;background:var(--bg);border-radius:12px;padding:12px}
+.phase .n{width:28px;height:28px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;grid-row:1/3}
+.phase h4{font-size:17px}
+.phase ul{grid-column:2}
+.skills{display:flex;flex-wrap:wrap;gap:6px}
+
+/* calendar modal */
+.calbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.calbar .m{font-family:var(--f-display);font-size:22px;font-weight:800;min-width:9ch;text-align:center}
+.calbar input,.calbar select{border:2px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--bg);min-width:0}
+.calbar .grow{flex:1 1 180px}
+.mtabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.mtabs button{border:0;border-radius:999px;padding:5px 12px;background:var(--bg);font-weight:700;font-size:13px;white-space:nowrap}
+.mtabs button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.wk{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:8px;border-top:1px solid var(--line);padding-top:10px}
+.wk-h{background:var(--leaf-soft);border-radius:12px;padding:10px;display:grid;align-content:center;gap:2px;text-align:center}
+.wk-h b{font-family:var(--f-display);font-size:16px;line-height:1.2}
+.wk-h span{font-size:13px;color:var(--ink-2)}
+.wk-p{background:var(--paper);border-radius:12px;padding:10px;font-size:13px;display:grid;align-content:center;gap:2px;text-align:center}
+.wk-p .eyebrow{font-size:10px}
+.wk-d{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.cell{border:2px solid transparent;background:var(--bg);border-radius:12px;padding:8px;text-align:left;display:grid;gap:4px;align-content:start;min-width:0;font-size:13px;line-height:1.25}
+.cell b{font-family:var(--f-display);font-size:18px}
+.cell .pic{width:100%;border-radius:8px}
+.cell .t{font-weight:700;overflow-wrap:anywhere}
+.cell .tag{font-size:11px;padding:1px 7px}
+.cell.is-today{border-color:var(--sun);background:var(--paper)}
+.cell.empty{background:transparent;cursor:default}
+.cell.hol{opacity:.7}
+.dows{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+.dows>div:nth-child(2){display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;text-align:center}
+.results{display:grid;gap:8px}
+.res{border:0;background:var(--bg);border-radius:12px;padding:10px 12px;text-align:left;display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+.res b{font-family:var(--f-display);font-size:18px;grid-row:1/3;align-self:center;min-width:6ch}
+.cert-prev{width:100%;border-radius:10px;box-shadow:var(--shadow);background:#fff}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.thumbs figure{margin:0;position:relative}
+.thumbs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
+.thumbs figcaption{font-size:12px}
+.thumbs button{position:absolute;top:4px;right:4px;border:0;border-radius:6px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;padding:2px 6px}
+
+/* tour */
+.tour-hi{position:fixed;z-index:60;border-radius:14px;box-shadow:0 0 0 4px var(--sun),0 0 0 9999px rgba(8,16,32,.62);pointer-events:none;transition:all .25s}
+.tour-box{position:fixed;z-index:61;background:var(--surface);color:var(--ink);border-radius:16px;padding:16px;width:min(360px,calc(100vw - 32px));box-shadow:0 18px 40px rgba(0,0,0,.35);display:grid;gap:10px}
+.tour-box h4{font-size:19px}
+.tour-box p{margin:0;font-size:15px}
+.tour-nav{display:flex;gap:8px;align-items:center}
+.tour-nav span{flex:1;font-size:13px;color:var(--ink-2)}
+
+@media (max-width:980px){
+  .strip{grid-template-columns:1fr 1fr 1fr}
+  .strip .today{grid-column:1/-1;order:-1}
+  .two{grid-template-columns:1fr}
+  .steps,.impact{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wk,.dows{grid-template-columns:1fr}
+  .dows{display:none}
+  .wk-d{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cell.empty{display:none}
+  .wk-h,.wk-p{text-align:left}
+}
+@media (max-width:620px){
+  .brand span{display:none}
+  .levels{gap:8px}
+  .lvl{padding:10px}
+  .lvl b{font-size:21px}
+  .lvl span{font-size:12px}
+  .strip{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .wall{grid-template-columns:1fr;grid-template-rows:2fr 1fr 1fr;height:640px}
+  .spot:first-child{grid-row:auto}
+  .row{grid-template-columns:1fr}
+  .wk-d{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wkdays{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .helpbtn .lbl,.navbtn .lbl{display:none}
+  .homebtn img{height:30px}
+  .brand b{font-size:22px}
+  .lang button{padding:5px 8px;font-size:13px}
+}
+@media (max-width:420px){.brand{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <button class="homebtn" type="button" id="logoHome" aria-label="Home"><img src="mantra-logo.png" alt="Mantra4Change"><span class="brand"><b data-i="brand">ಸಚೇತನ</b><span data-i="brandSub">Morning Assembly Calendar 2026–27</span></span></button>
+    <button class="navbtn" id="homeBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="lbl" data-i="home">Home</span></button>
+    <div class="lang" id="langSw" role="group" aria-label="Language">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="kn">ಕನ್ನಡ</button>
+      <button type="button" data-lang="hi">हिंदी</button>
+    </div>
+    <button class="helpbtn" id="helpBtn" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.2 9a3 3 0 0 1 5.6 1c0 2-3 2.6-3 4.4"/><circle cx="12" cy="17.6" r=".6" fill="currentColor"/></svg><span class="lbl" data-i="help">Help</span></button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span class="sun"></span><span data-i="heroT">Every child speaks, leads and grows</span></h1>
+      <p data-i="heroP">A daily, student-led morning assembly activity for every government school. Pick your school level to open its full calendar.</p>
+    </div>
+    <div class="levels" id="levels">
+      <button class="lvl" type="button" data-level="LPS"><b>LPS</b><span data-i="LPSn">Lower Primary School</span><small data-i="openCal">Open calendar →</small></button>
+      <button class="lvl" type="button" data-level="HPS"><b>HPS</b><span data-i="HPSn">Higher Primary School</span><small data-i="openCal">Open calendar →</small></button>
+      <button class="lvl" type="button" data-level="HS"><b>HS</b><span data-i="HSn">High School</span><small data-i="openCal">Open calendar →</small></button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="sec-h">
+        <div><div class="eyebrow" id="levelEyebrow">LPS</div><h2 data-i="thisMorning">This morning's assembly</h2></div>
+        <div class="muted" id="todayLabel"></div>
+      </div>
+      <div class="strip" id="strip"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap two">
+      <div class="card week" id="weekCard"></div>
+      <div class="tools" id="tools">
+        <button class="tool" type="button" id="tDownload"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v3h16v-3"/></svg><b data-i="dlCal">Download full calendar</b><span data-i="dlCalS">LPS, HPS or HS calendar as a PDF to print.</span></button>
+        <button class="tool" type="button" id="tFormat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 13h2M14 13h2M8 17h2"/></svg><b data-i="dlFmt">Blank calendar format</b><span data-i="dlFmtS">Make your own school's calendar on the same format.</span></button>
+        <button class="tool" type="button" id="tCert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg><b data-i="cert">Certificate of appreciation</b><span data-i="certS">Create one in a child's name with school and grade.</span></button>
+        <button class="tool" type="button" id="tUpload"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 8"/></svg><b data-i="share">Share assembly photos</b><span data-i="shareS">Upload photos with your school name for the photo wall.</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallerySec">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><div class="eyebrow" data-i="wallE">From our schools</div><h2 data-i="wallT">Assembly photo wall</h2></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" type="button" id="manageBtn" hidden data-i="manage">Manage photos</button><button class="btn sun" type="button" id="upBtn2" data-i="addPhoto">Add your school's photo</button></div>
+      </div>
+      <div class="wall" id="wall"></div>
+      <p class="note" data-i="wallN" style="margin:10px 0 0">Photos change every 10 seconds.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-h"><div><div class="eyebrow" data-i="methodE">How every activity runs</div><h2 data-i="methodT">Four steps that build life skills</h2></div></div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-h"><div><div class="eyebrow" data-i="impE">Karnataka so far</div><h2 data-i="impT">What Sachetana has reached</h2></div></div>
+      <div class="impact" id="impact"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="partners"><img src="partners.png" alt="Bosch, Salesforce, Samagra Shikshana Karnataka, DSERT and Mantra4Change"></div>
+    <div class="note" data-i="foot">Samagra Shikshana Karnataka and DSERT, with Mantra4Change. CSR initiative by Bosch and Salesforce.</div>
+  </div>
+</footer>
+
+<div id="modalRoot"></div>
+
+<script>
+(function(){
+"use strict";
+/* ---------- i18n ---------- */
+const I18N={
+en:{brand:"Sachetana",brandSub:"Morning Assembly Calendar 2026–27",help:"Help",home:"Home",heroT:"Every child speaks, leads and grows",heroP:"A daily, student-led morning assembly activity for every government school. Pick your school level to open its full calendar.",
+LPSn:"Lower Primary School",HPSn:"Higher Primary School",HSn:"High School",openCal:"Open calendar →",thisMorning:"This morning's assembly",
+yesterday:"Yesterday",today:"Today",tomorrow:"Tomorrow",dayAfter:"Day after tomorrow",noAssembly:"No assembly",sunday:"Sunday holiday",notListed:"No activity listed for this day",
+resources:"Resources",explain:"Explanation",markDone:"Mark as done",doneT:"Done",viewDetails:"Tap to see the activity",
+weekE:"This week",leads:"leads the assembly",theme:"Theme",parentT:"Parents at home this week",doneCount:"activities marked done on this device",
+dlCal:"Download full calendar",dlCalS:"LPS, HPS or HS calendar as a PDF to print.",dlFmt:"Blank calendar format",dlFmtS:"Make your own school's calendar on the same format.",
+cert:"Certificate of appreciation",certS:"Create one in a child's name with school and grade.",share:"Share assembly photos",shareS:"Upload photos with your school name for the photo wall.",
+wallE:"From our schools",wallT:"Assembly photo wall",addPhoto:"Add your school's photo",wallN:"Photos change every 10 seconds.",manage:"Manage photos",
+methodE:"How every activity runs",methodT:"Four steps that build life skills",impE:"Karnataka so far",impT:"What Sachetana has reached",
+foot:"Samagra Shikshana Karnataka and DSERT, with Mantra4Change. CSR initiative by Bosch and Salesforce.",
+s1:"Plan",s1d:"Children choose roles and plan the activity with the teacher a week ahead.",s2:"Prepare",s2d:"They gather material, practise speaking and rehearse together.",s3:"Perform",s3d:"They lead the 5-minute activity in front of the whole school.",s4:"Reflect",s4d:"They share what went well and what to try next time.",
+i1:"government schools received the calendar",i2:"schools run student-led assemblies",i3:"students got a chance to lead",i4:"training workshops across the state",
+calT:"Calendar",search:"Search activities…",allTypes:"All activity types",results:"results",noRes:"No activities match.",prev:"Previous month",next:"Next month",
+mon:"Mon",tue:"Tue",wed:"Wed",thu:"Thu",fri:"Fri",sat:"Sat",gradeArea:"Grade & area",parentCol:"Parent activity",
+what:"What children do",why:"Life skills it builds",how:"How to run it",time:"Time",timeV:"About 5 minutes inside a 15–20 minute assembly",tip:"Teacher tip",roles:"Roles for children",
+matT:"Materials needed",prepT:"Get ready the day before",parentRes:"Parent activity this week",onDay:"Activity for",
+p1:"Plan",p2:"Prepare",p3:"Perform",p4:"Reflect",
+plan1:"Read the activity with the student cabinet a week ahead.",plan2:"Pick 3–10 children who have not led recently, so every child gets a turn.",
+ref1:"Ask 2–3 children: what went well, what was hard?",ref2:"Note the leaders' names in the assembly register.",ref3:"Praise effort in the 'Students' appreciation' box.",
+prep1:"Collect the materials listed below.",prep2:"Let the leaders rehearse once with the teacher.",prep3:"Decide where each child will stand so all can see and hear.",
+dlT:"Download full calendar",dlP:"The printed 2026–27 calendar with all months, activity details and parent activities. Pick a level:",dlBtn:"Download PDF",dlSize:"About 7 MB",saved:"Download started. Check your downloads folder.",
+dlNo:"Downloads are not available in this view. Open this page in a browser on claude.ai to download.",declined:"Download cancelled.",
+fmtT:"Blank calendar format",fmtP:"Get an empty month page in the Sachetana layout. Fill it with your own activities, by hand or on a computer.",level:"Level",month:"Month",blankM:"Blank (no dates)",language:"Language",
+fmtPng:"Download printable page (PNG)",fmtCsv:"Download editable sheet (CSV)",
+certT:"Certificate of appreciation",cName:"Child's name",cSchool:"School name",cGrade:"Grade",cAct:"Activity",cDate:"Date",cLang:"Certificate language",cBtn:"Download certificate",cPhoto:"Also add an assembly photo to the photo wall (optional)",
+cNeed:"Enter the child's name, school and grade.",
+upT:"Share assembly photos",upSchool:"School name",upPlace:"Village / block / district",upFiles:"Photos (up to 5)",upConsent:"I have the school's permission to share these photos.",upBtn:"Upload photos",
+upNo:"Uploading needs you to be signed in to claude.ai with permission to add to this page. Ask the Mantra4Change team to give you access.",upDone:"Uploaded. Your photos will appear on the photo wall.",upNeed:"Add the school name, at least one photo, and tick the permission box.",uploading:"Uploading…",
+mgT:"Manage uploaded photos",mgNone:"No photos have been uploaded yet.",remove:"Remove",
+close:"Close",nextB:"Next",backB:"Back",finish:"Finish",of:"of",
+calPhoto:"Sachetana school, Karnataka",
+t0:"Home",t0d:"Press Home or the Mantra logo any time to close what is open and come back to today's activity.",t1:"Choose your language",t1d:"Switch between English, Kannada and Hindi at any time. Activity details come straight from the Kannada calendar with an English translation.",
+t2:"Pick your school level",t2d:"LPS, HPS and HS each have their own calendar. Tap a level to open its full year calendar.",
+t3:"Today's activity",t3d:"Today's activity is highlighted. Yesterday, tomorrow and the day after are lighter. Tap any of them to see the full activity.",
+t4:"Resources and explanation",t4d:"Resources lists what to collect. Explanation shows why the activity matters and how to run it, step by step.",
+t5:"This week",t5d:"The grade leading this week, its theme, and the activity parents can do at home.",
+t6:"Downloads and certificates",t6d:"Download the full calendar, a blank format for your own calendar, or make a certificate for a child.",
+t7:"Photo wall",t7d:"Photos from schools rotate here every 10 seconds. Add your own with your school name.",
+t8:"Need help again?",t8d:"Press Help any time to replay this guide.",
+hiNote:""},
+kn:{brand:"ಸಚೇತನ",brandSub:"ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳ ಕ್ಯಾಲೆಂಡರ್ 2026–27",help:"ಸಹಾಯ",home:"ಮುಖಪುಟ",heroT:"ಪ್ರತಿ ಮಗುವೂ ಮಾತನಾಡಲಿ, ಮುನ್ನಡೆಸಲಿ, ಬೆಳೆಯಲಿ",heroP:"ಪ್ರತಿ ಸರ್ಕಾರಿ ಶಾಲೆಗೆ ದಿನನಿತ್ಯದ, ಮಕ್ಕಳ ನೇತೃತ್ವದ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆ. ಪೂರ್ಣ ಕ್ಯಾಲೆಂಡರ್ ನೋಡಲು ನಿಮ್ಮ ಶಾಲಾ ಹಂತವನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+LPSn:"ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ",HPSn:"ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ",HSn:"ಪ್ರೌಢ ಶಾಲೆ",openCal:"ಕ್ಯಾಲೆಂಡರ್ ತೆರೆಯಿರಿ →",thisMorning:"ಇಂದಿನ ಪ್ರಾರ್ಥನಾ ಅವಧಿ",
+yesterday:"ನಿನ್ನೆ",today:"ಇಂದು",tomorrow:"ನಾಳೆ",dayAfter:"ನಾಡಿದ್ದು",noAssembly:"ಪ್ರಾರ್ಥನಾ ಚಟುವಟಿಕೆ ಇಲ್ಲ",sunday:"ಭಾನುವಾರ ರಜೆ",notListed:"ಈ ದಿನಕ್ಕೆ ಚಟುವಟಿಕೆ ಇಲ್ಲ",
+resources:"ಸಂಪನ್ಮೂಲಗಳು",explain:"ವಿವರಣೆ",markDone:"ಮಾಡಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ",doneT:"ಮುಗಿದಿದೆ",viewDetails:"ಚಟುವಟಿಕೆ ನೋಡಲು ಒತ್ತಿ",
+weekE:"ಈ ವಾರ",leads:"ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಮುನ್ನಡೆಸುತ್ತದೆ",theme:"ವಿಷಯ",parentT:"ಈ ವಾರ ಮನೆಯಲ್ಲಿ ಪೋಷಕರ ಚಟುವಟಿಕೆ",doneCount:"ಚಟುವಟಿಕೆಗಳನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಮುಗಿದಿದೆ ಎಂದು ಗುರುತಿಸಲಾಗಿದೆ",
+dlCal:"ಪೂರ್ಣ ಕ್ಯಾಲೆಂಡರ್ ಡೌನ್‌ಲೋಡ್",dlCalS:"LPS, HPS ಅಥವಾ HS ಕ್ಯಾಲೆಂಡರ್ PDF ಮುದ್ರಿಸಲು.",dlFmt:"ಖಾಲಿ ಕ್ಯಾಲೆಂಡರ್ ನಮೂನೆ",dlFmtS:"ಇದೇ ನಮೂನೆಯಲ್ಲಿ ನಿಮ್ಮ ಶಾಲೆಯ ಕ್ಯಾಲೆಂಡರ್ ತಯಾರಿಸಿ.",
+cert:"ಮೆಚ್ಚುಗೆ ಪತ್ರ",certS:"ಮಗುವಿನ ಹೆಸರು, ಶಾಲೆ ಮತ್ತು ತರಗತಿಯೊಂದಿಗೆ ತಯಾರಿಸಿ.",share:"ಪ್ರಾರ್ಥನಾ ಅವಧಿಯ ಫೋಟೋ ಹಂಚಿಕೊಳ್ಳಿ",shareS:"ಶಾಲೆಯ ಹೆಸರಿನೊಂದಿಗೆ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
+wallE:"ನಮ್ಮ ಶಾಲೆಗಳಿಂದ",wallT:"ಪ್ರಾರ್ಥನಾ ಅವಧಿಯ ಫೋಟೋ ಗೋಡೆ",addPhoto:"ನಿಮ್ಮ ಶಾಲೆಯ ಫೋಟೋ ಸೇರಿಸಿ",wallN:"ಪ್ರತಿ 10 ಸೆಕೆಂಡಿಗೆ ಫೋಟೋಗಳು ಬದಲಾಗುತ್ತವೆ.",manage:"ಫೋಟೋ ನಿರ್ವಹಣೆ",
+methodE:"ಪ್ರತಿ ಚಟುವಟಿಕೆ ನಡೆಯುವ ರೀತಿ",methodT:"ಜೀವನ ಕೌಶಲ್ಯ ಬೆಳೆಸುವ ನಾಲ್ಕು ಹಂತಗಳು",impE:"ಕರ್ನಾಟಕದಲ್ಲಿ ಇಲ್ಲಿಯವರೆಗೆ",impT:"ಸಚೇತನದ ವ್ಯಾಪ್ತಿ",
+foot:"ಸಮಗ್ರ ಶಿಕ್ಷಣ ಕರ್ನಾಟಕ ಮತ್ತು ಡಿಎಸ್‌ಇಆರ್‌ಟಿ, ಮಂತ್ರ ಫಾರ್ ಚೇಂಜ್ ಸಹಯೋಗದೊಂದಿಗೆ. ಬಾಷ್ ಮತ್ತು ಸೇಲ್ಸ್‌ಫೋರ್ಸ್ ಸಿಎಸ್‌ಆರ್ ಉಪಕ್ರಮ.",
+s1:"ಯೋಜನೆ",s1d:"ಮಕ್ಕಳು ಒಂದು ವಾರ ಮುಂಚಿತವಾಗಿ ಶಿಕ್ಷಕರೊಂದಿಗೆ ಪಾತ್ರಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ ಯೋಜಿಸುತ್ತಾರೆ.",s2:"ಸಿದ್ಧತೆ",s2d:"ಸಾಮಗ್ರಿ ಸಂಗ್ರಹಿಸಿ, ಮಾತನಾಡುವುದನ್ನು ಅಭ್ಯಾಸ ಮಾಡುತ್ತಾರೆ.",s3:"ಅನುಷ್ಠಾನ",s3d:"ಇಡೀ ಶಾಲೆಯ ಮುಂದೆ 5 ನಿಮಿಷದ ಚಟುವಟಿಕೆ ನಡೆಸುತ್ತಾರೆ.",s4:"ಸ್ವ-ಅವಲೋಕನ",s4d:"ಚೆನ್ನಾಗಿ ಆದದ್ದು ಮತ್ತು ಮುಂದೆ ಉತ್ತಮಪಡಿಸುವುದನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.",
+i1:"ಸರ್ಕಾರಿ ಶಾಲೆಗಳಿಗೆ ಕ್ಯಾಲೆಂಡರ್ ತಲುಪಿದೆ",i2:"ಶಾಲೆಗಳಲ್ಲಿ ಮಕ್ಕಳ ನೇತೃತ್ವದ ಪ್ರಾರ್ಥನೆ",i3:"ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ನಾಯಕತ್ವದ ಅವಕಾಶ",i4:"ರಾಜ್ಯಾದ್ಯಂತ ತರಬೇತಿ ಕಾರ್ಯಾಗಾರಗಳು",
+calT:"ಕ್ಯಾಲೆಂಡರ್",search:"ಚಟುವಟಿಕೆ ಹುಡುಕಿ…",allTypes:"ಎಲ್ಲಾ ಚಟುವಟಿಕೆ ವಿಧಗಳು",results:"ಫಲಿತಾಂಶಗಳು",noRes:"ಯಾವುದೇ ಚಟುವಟಿಕೆ ಸಿಗಲಿಲ್ಲ.",prev:"ಹಿಂದಿನ ತಿಂಗಳು",next:"ಮುಂದಿನ ತಿಂಗಳು",
+mon:"ಸೋಮ",tue:"ಮಂಗಳ",wed:"ಬುಧ",thu:"ಗುರು",fri:"ಶುಕ್ರ",sat:"ಶನಿ",gradeArea:"ತರಗತಿ & ಕ್ಷೇತ್ರ",parentCol:"ಪೋಷಕರ ಚಟುವಟಿಕೆ",
+what:"ಮಕ್ಕಳು ಏನು ಮಾಡುತ್ತಾರೆ",why:"ಬೆಳೆಯುವ ಜೀವನ ಕೌಶಲ್ಯಗಳು",how:"ನಡೆಸುವ ವಿಧಾನ",time:"ಸಮಯ",timeV:"15–20 ನಿಮಿಷದ ಪ್ರಾರ್ಥನಾ ಅವಧಿಯಲ್ಲಿ ಸುಮಾರು 5 ನಿಮಿಷ",tip:"ಶಿಕ್ಷಕರಿಗೆ ಸಲಹೆ",roles:"ಮಕ್ಕಳ ಪಾತ್ರಗಳು",
+matT:"ಬೇಕಾಗುವ ಸಾಮಗ್ರಿಗಳು",prepT:"ಹಿಂದಿನ ದಿನವೇ ಸಿದ್ಧರಾಗಿ",parentRes:"ಈ ವಾರದ ಪೋಷಕರ ಚಟುವಟಿಕೆ",onDay:"ಚಟುವಟಿಕೆ ದಿನಾಂಕ",
+p1:"ಯೋಜನೆ",p2:"ಸಿದ್ಧತೆ",p3:"ಅನುಷ್ಠಾನ",p4:"ಸ್ವ-ಅವಲೋಕನ",
+plan1:"ಒಂದು ವಾರ ಮುಂಚಿತವಾಗಿ ವಿದ್ಯಾರ್ಥಿ ಸಂಪುಟದೊಂದಿಗೆ ಚಟುವಟಿಕೆಯನ್ನು ಓದಿ.",plan2:"ಇತ್ತೀಚೆಗೆ ಅವಕಾಶ ಸಿಗದ 3–10 ಮಕ್ಕಳನ್ನು ಆಯ್ಕೆಮಾಡಿ; ಪ್ರತಿ ಮಗುವಿಗೂ ಅವಕಾಶ ಸಿಗಲಿ.",
+ref1:"2–3 ಮಕ್ಕಳನ್ನು ಕೇಳಿ: ಏನು ಚೆನ್ನಾಗಿ ಆಯಿತು, ಏನು ಕಷ್ಟವಾಯಿತು?",ref2:"ನೇತೃತ್ವ ವಹಿಸಿದ ಮಕ್ಕಳ ಹೆಸರನ್ನು ಪ್ರಾರ್ಥನಾ ದಾಖಲೆಯಲ್ಲಿ ಬರೆಯಿರಿ.",ref3:"'ವಿದ್ಯಾರ್ಥಿಗಳ ಮೆಚ್ಚುಗೆ' ಸ್ಥಳದಲ್ಲಿ ಅವರ ಪ್ರಯತ್ನವನ್ನು ಮೆಚ್ಚಿ.",
+prep1:"ಕೆಳಗೆ ನೀಡಿರುವ ಸಾಮಗ್ರಿಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ.",prep2:"ನೇತೃತ್ವ ವಹಿಸುವ ಮಕ್ಕಳು ಶಿಕ್ಷಕರೊಂದಿಗೆ ಒಮ್ಮೆ ಅಭ್ಯಾಸ ಮಾಡಲಿ.",prep3:"ಎಲ್ಲರಿಗೂ ಕಾಣುವಂತೆ, ಕೇಳುವಂತೆ ಪ್ರತಿ ಮಗು ನಿಲ್ಲುವ ಸ್ಥಳ ನಿರ್ಧರಿಸಿ.",
+dlT:"ಪೂರ್ಣ ಕ್ಯಾಲೆಂಡರ್ ಡೌನ್‌ಲೋಡ್",dlP:"ಎಲ್ಲಾ ತಿಂಗಳುಗಳು, ಚಟುವಟಿಕೆ ವಿವರ ಮತ್ತು ಪೋಷಕರ ಚಟುವಟಿಕೆಗಳಿರುವ 2026–27 ಕ್ಯಾಲೆಂಡರ್. ಹಂತ ಆಯ್ಕೆಮಾಡಿ:",dlBtn:"PDF ಡೌನ್‌ಲೋಡ್",dlSize:"ಸುಮಾರು 7 MB",saved:"ಡೌನ್‌ಲೋಡ್ ಆರಂಭವಾಗಿದೆ. ನಿಮ್ಮ ಡೌನ್‌ಲೋಡ್ ಫೋಲ್ಡರ್ ನೋಡಿ.",
+dlNo:"ಈ ನೋಟದಲ್ಲಿ ಡೌನ್‌ಲೋಡ್ ಲಭ್ಯವಿಲ್ಲ. claude.ai ನಲ್ಲಿ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ.",declined:"ಡೌನ್‌ಲೋಡ್ ರದ್ದಾಗಿದೆ.",
+fmtT:"ಖಾಲಿ ಕ್ಯಾಲೆಂಡರ್ ನಮೂನೆ",fmtP:"ಸಚೇತನ ವಿನ್ಯಾಸದ ಖಾಲಿ ತಿಂಗಳ ಪುಟ ಪಡೆಯಿರಿ. ಕೈಯಿಂದ ಅಥವಾ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಚಟುವಟಿಕೆಗಳನ್ನು ತುಂಬಿರಿ.",level:"ಹಂತ",month:"ತಿಂಗಳು",blankM:"ಖಾಲಿ (ದಿನಾಂಕವಿಲ್ಲ)",language:"ಭಾಷೆ",
+fmtPng:"ಮುದ್ರಿಸಬಹುದಾದ ಪುಟ (PNG)",fmtCsv:"ತಿದ್ದಬಹುದಾದ ಪಟ್ಟಿ (CSV)",
+certT:"ಮೆಚ್ಚುಗೆ ಪತ್ರ",cName:"ಮಗುವಿನ ಹೆಸರು",cSchool:"ಶಾಲೆಯ ಹೆಸರು",cGrade:"ತರಗತಿ",cAct:"ಚಟುವಟಿಕೆ",cDate:"ದಿನಾಂಕ",cLang:"ಪತ್ರದ ಭಾಷೆ",cBtn:"ಮೆಚ್ಚುಗೆ ಪತ್ರ ಡೌನ್‌ಲೋಡ್",cPhoto:"ಫೋಟೋ ಗೋಡೆಗೆ ಪ್ರಾರ್ಥನಾ ಅವಧಿಯ ಫೋಟೋ ಸೇರಿಸಿ (ಐಚ್ಛಿಕ)",
+cNeed:"ಮಗುವಿನ ಹೆಸರು, ಶಾಲೆ ಮತ್ತು ತರಗತಿ ನಮೂದಿಸಿ.",
+upT:"ಪ್ರಾರ್ಥನಾ ಅವಧಿಯ ಫೋಟೋ ಹಂಚಿಕೊಳ್ಳಿ",upSchool:"ಶಾಲೆಯ ಹೆಸರು",upPlace:"ಗ್ರಾಮ / ಬ್ಲಾಕ್ / ಜಿಲ್ಲೆ",upFiles:"ಫೋಟೋಗಳು (5 ರವರೆಗೆ)",upConsent:"ಈ ಫೋಟೋಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಶಾಲೆಯ ಅನುಮತಿ ಇದೆ.",upBtn:"ಫೋಟೋ ಅಪ್‌ಲೋಡ್",
+upNo:"ಅಪ್‌ಲೋಡ್ ಮಾಡಲು claude.ai ಗೆ ಸೈನ್ ಇನ್ ಆಗಿ ಈ ಪುಟಕ್ಕೆ ಸೇರಿಸುವ ಅನುಮತಿ ಬೇಕು. ಮಂತ್ರ ಫಾರ್ ಚೇಂಜ್ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ.",upDone:"ಅಪ್‌ಲೋಡ್ ಆಗಿದೆ. ನಿಮ್ಮ ಫೋಟೋಗಳು ಫೋಟೋ ಗೋಡೆಯಲ್ಲಿ ಕಾಣುತ್ತವೆ.",upNeed:"ಶಾಲೆಯ ಹೆಸರು, ಕನಿಷ್ಠ ಒಂದು ಫೋಟೋ ಸೇರಿಸಿ ಮತ್ತು ಅನುಮತಿ ಗುರುತಿಸಿ.",uploading:"ಅಪ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ…",
+mgT:"ಅಪ್‌ಲೋಡ್ ಆದ ಫೋಟೋಗಳು",mgNone:"ಇನ್ನೂ ಯಾವುದೇ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಆಗಿಲ್ಲ.",remove:"ತೆಗೆಯಿರಿ",
+close:"ಮುಚ್ಚಿ",nextB:"ಮುಂದೆ",backB:"ಹಿಂದೆ",finish:"ಮುಗಿಸಿ",of:"/",
+calPhoto:"ಸಚೇತನ ಶಾಲೆ, ಕರ್ನಾಟಕ",
+t0:"ಮುಖಪುಟ",t0d:"ತೆರೆದಿರುವುದನ್ನು ಮುಚ್ಚಿ ಇಂದಿನ ಚಟುವಟಿಕೆಗೆ ಮರಳಲು ಯಾವಾಗ ಬೇಕಾದರೂ 'ಮುಖಪುಟ' ಅಥವಾ ಮಂತ್ರ ಲೋಗೋ ಒತ್ತಿ.",t1:"ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ",t1d:"ಯಾವಾಗ ಬೇಕಾದರೂ ಇಂಗ್ಲಿಷ್, ಕನ್ನಡ ಮತ್ತು ಹಿಂದಿ ನಡುವೆ ಬದಲಿಸಿ.",
+t2:"ಶಾಲಾ ಹಂತ ಆಯ್ಕೆಮಾಡಿ",t2d:"LPS, HPS ಮತ್ತು HS ಗೆ ಪ್ರತ್ಯೇಕ ಕ್ಯಾಲೆಂಡರ್ ಇದೆ. ಪೂರ್ಣ ವರ್ಷದ ಕ್ಯಾಲೆಂಡರ್ ತೆರೆಯಲು ಹಂತವನ್ನು ಒತ್ತಿ.",
+t3:"ಇಂದಿನ ಚಟುವಟಿಕೆ",t3d:"ಇಂದಿನ ಚಟುವಟಿಕೆ ಎದ್ದು ಕಾಣುತ್ತದೆ. ನಿನ್ನೆ, ನಾಳೆ ಮತ್ತು ನಾಡಿದ್ದಿನ ಚಟುವಟಿಕೆಗಳು ಮಸುಕಾಗಿವೆ. ಪೂರ್ಣ ವಿವರಕ್ಕೆ ಒತ್ತಿ.",
+t4:"ಸಂಪನ್ಮೂಲ ಮತ್ತು ವಿವರಣೆ",t4d:"ಸಂಪನ್ಮೂಲಗಳು ಬೇಕಾದ ಸಾಮಗ್ರಿ ತೋರಿಸುತ್ತದೆ. ವಿವರಣೆ ಚಟುವಟಿಕೆಯ ಉದ್ದೇಶ ಮತ್ತು ನಡೆಸುವ ಹಂತಗಳನ್ನು ತೋರಿಸುತ್ತದೆ.",
+t5:"ಈ ವಾರ",t5d:"ಈ ವಾರ ಮುನ್ನಡೆಸುವ ತರಗತಿ, ವಿಷಯ ಮತ್ತು ಮನೆಯಲ್ಲಿ ಪೋಷಕರ ಚಟುವಟಿಕೆ.",
+t6:"ಡೌನ್‌ಲೋಡ್ ಮತ್ತು ಮೆಚ್ಚುಗೆ ಪತ್ರ",t6d:"ಪೂರ್ಣ ಕ್ಯಾಲೆಂಡರ್, ಖಾಲಿ ನಮೂನೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ಮಗುವಿಗೆ ಮೆಚ್ಚುಗೆ ಪತ್ರ ತಯಾರಿಸಿ.",
+t7:"ಫೋಟೋ ಗೋಡೆ",t7d:"ಶಾಲೆಗಳ ಫೋಟೋಗಳು ಪ್ರತಿ 10 ಸೆಕೆಂಡಿಗೆ ಬದಲಾಗುತ್ತವೆ. ನಿಮ್ಮ ಶಾಲೆಯ ಹೆಸರಿನೊಂದಿಗೆ ಫೋಟೋ ಸೇರಿಸಿ.",
+t8:"ಮತ್ತೆ ಸಹಾಯ ಬೇಕೇ?",t8d:"ಈ ಮಾರ್ಗದರ್ಶಿ ಮತ್ತೆ ನೋಡಲು ಯಾವಾಗ ಬೇಕಾದರೂ 'ಸಹಾಯ' ಒತ್ತಿ.",hiNote:""},
+hi:{brand:"सचेतना",brandSub:"प्रातःकालीन सभा कैलेंडर 2026–27",help:"मदद",home:"होम",heroT:"हर बच्चा बोले, नेतृत्व करे और आगे बढ़े",heroP:"हर सरकारी स्कूल के लिए रोज़ की, बच्चों द्वारा संचालित प्रार्थना सभा गतिविधि। पूरा कैलेंडर देखने के लिए अपना स्कूल स्तर चुनें।",
+LPSn:"निम्न प्राथमिक विद्यालय",HPSn:"उच्च प्राथमिक विद्यालय",HSn:"हाई स्कूल",openCal:"कैलेंडर खोलें →",thisMorning:"आज की प्रार्थना सभा",
+yesterday:"कल (बीता)",today:"आज",tomorrow:"कल",dayAfter:"परसों",noAssembly:"सभा गतिविधि नहीं",sunday:"रविवार अवकाश",notListed:"इस दिन कोई गतिविधि नहीं",
+resources:"संसाधन",explain:"व्याख्या",markDone:"पूरा हुआ चिह्नित करें",doneT:"पूरा हुआ",viewDetails:"गतिविधि देखने के लिए दबाएँ",
+weekE:"इस सप्ताह",leads:"सभा का नेतृत्व करती है",theme:"विषय",parentT:"इस सप्ताह घर पर अभिभावक गतिविधि",doneCount:"गतिविधियाँ इस डिवाइस पर पूरी चिह्नित",
+dlCal:"पूरा कैलेंडर डाउनलोड करें",dlCalS:"LPS, HPS या HS कैलेंडर PDF में प्रिंट के लिए।",dlFmt:"खाली कैलेंडर प्रारूप",dlFmtS:"इसी प्रारूप में अपने स्कूल का कैलेंडर बनाएँ।",
+cert:"प्रशंसा पत्र",certS:"बच्चे के नाम, स्कूल और कक्षा के साथ बनाएँ।",share:"सभा की फ़ोटो साझा करें",shareS:"स्कूल के नाम के साथ फ़ोटो अपलोड करें।",
+wallE:"हमारे स्कूलों से",wallT:"सभा फ़ोटो दीवार",addPhoto:"अपने स्कूल की फ़ोटो जोड़ें",wallN:"फ़ोटो हर 10 सेकंड में बदलती हैं।",manage:"फ़ोटो प्रबंधन",
+methodE:"हर गतिविधि कैसे चलती है",methodT:"जीवन कौशल बनाने वाले चार चरण",impE:"कर्नाटक में अब तक",impT:"सचेतना की पहुँच",
+foot:"समग्र शिक्षा कर्नाटक और DSERT, मंत्रा4चेंज के साथ। बॉश और सेल्सफ़ोर्स की CSR पहल।",
+s1:"योजना",s1d:"बच्चे एक सप्ताह पहले शिक्षक के साथ भूमिकाएँ चुनकर योजना बनाते हैं।",s2:"तैयारी",s2d:"सामग्री जुटाते हैं, बोलने का अभ्यास करते हैं।",s3:"प्रस्तुति",s3d:"पूरे स्कूल के सामने 5 मिनट की गतिविधि करते हैं।",s4:"आत्म-चिंतन",s4d:"क्या अच्छा रहा और आगे क्या बेहतर करें, साझा करते हैं।",
+i1:"सरकारी स्कूलों तक कैलेंडर पहुँचा",i2:"स्कूलों में बच्चों द्वारा संचालित सभा",i3:"विद्यार्थियों को नेतृत्व का अवसर",i4:"राज्य भर में प्रशिक्षण कार्यशालाएँ",
+calT:"कैलेंडर",search:"गतिविधि खोजें…",allTypes:"सभी गतिविधि प्रकार",results:"परिणाम",noRes:"कोई गतिविधि नहीं मिली।",prev:"पिछला महीना",next:"अगला महीना",
+mon:"सोम",tue:"मंगल",wed:"बुध",thu:"गुरु",fri:"शुक्र",sat:"शनि",gradeArea:"कक्षा और क्षेत्र",parentCol:"अभिभावक गतिविधि",
+what:"बच्चे क्या करते हैं",why:"कौन-से जीवन कौशल बनते हैं",how:"कैसे करवाएँ",time:"समय",timeV:"15–20 मिनट की सभा में लगभग 5 मिनट",tip:"शिक्षक के लिए सुझाव",roles:"बच्चों की भूमिकाएँ",
+matT:"ज़रूरी सामग्री",prepT:"एक दिन पहले तैयारी",parentRes:"इस सप्ताह की अभिभावक गतिविधि",onDay:"गतिविधि की तारीख",
+p1:"योजना",p2:"तैयारी",p3:"प्रस्तुति",p4:"आत्म-चिंतन",
+plan1:"एक सप्ताह पहले छात्र मंत्रिमंडल के साथ गतिविधि पढ़ें।",plan2:"ऐसे 3–10 बच्चे चुनें जिन्हें हाल में मौका नहीं मिला, ताकि हर बच्चे की बारी आए।",
+ref1:"2–3 बच्चों से पूछें: क्या अच्छा रहा, क्या कठिन था?",ref2:"नेतृत्व करने वाले बच्चों के नाम सभा रजिस्टर में लिखें।",ref3:"'विद्यार्थियों की सराहना' वाले स्थान पर उनके प्रयास की सराहना करें।",
+prep1:"नीचे दी गई सामग्री इकट्ठा करें।",prep2:"नेतृत्व करने वाले बच्चे शिक्षक के साथ एक बार अभ्यास करें।",prep3:"तय करें कि हर बच्चा कहाँ खड़ा होगा ताकि सब देख-सुन सकें।",
+dlT:"पूरा कैलेंडर डाउनलोड करें",dlP:"सभी महीनों, गतिविधि विवरण और अभिभावक गतिविधियों वाला 2026–27 कैलेंडर (कन्नड़ में)। स्तर चुनें:",dlBtn:"PDF डाउनलोड",dlSize:"लगभग 7 MB",saved:"डाउनलोड शुरू हो गया। अपना डाउनलोड फ़ोल्डर देखें।",
+dlNo:"इस दृश्य में डाउनलोड उपलब्ध नहीं है। claude.ai पर ब्राउज़र में खोलें।",declined:"डाउनलोड रद्द किया गया।",
+fmtT:"खाली कैलेंडर प्रारूप",fmtP:"सचेतना डिज़ाइन में खाली महीने का पेज पाएँ। हाथ से या कंप्यूटर पर अपनी गतिविधियाँ भरें।",level:"स्तर",month:"महीना",blankM:"खाली (बिना तारीख)",language:"भाषा",
+fmtPng:"प्रिंट योग्य पेज (PNG)",fmtCsv:"संपादन योग्य शीट (CSV)",
+certT:"प्रशंसा पत्र",cName:"बच्चे का नाम",cSchool:"स्कूल का नाम",cGrade:"कक्षा",cAct:"गतिविधि",cDate:"तारीख",cLang:"प्रमाणपत्र की भाषा",cBtn:"प्रशंसा पत्र डाउनलोड करें",cPhoto:"फ़ोटो दीवार पर सभा की फ़ोटो भी जोड़ें (वैकल्पिक)",
+cNeed:"बच्चे का नाम, स्कूल और कक्षा भरें।",
+upT:"सभा की फ़ोटो साझा करें",upSchool:"स्कूल का नाम",upPlace:"गाँव / ब्लॉक / ज़िला",upFiles:"फ़ोटो (5 तक)",upConsent:"मेरे पास इन फ़ोटो को साझा करने की स्कूल की अनुमति है।",upBtn:"फ़ोटो अपलोड करें",
+upNo:"अपलोड के लिए claude.ai में साइन इन और इस पेज पर जोड़ने की अनुमति चाहिए। मंत्रा4चेंज टीम से संपर्क करें।",upDone:"अपलोड हो गया। आपकी फ़ोटो फ़ोटो दीवार पर दिखेंगी।",upNeed:"स्कूल का नाम, कम से कम एक फ़ोटो और अनुमति वाला बॉक्स भरें।",uploading:"अपलोड हो रहा है…",
+mgT:"अपलोड की गई फ़ोटो",mgNone:"अभी तक कोई फ़ोटो अपलोड नहीं हुई।",remove:"हटाएँ",
+close:"बंद करें",nextB:"आगे",backB:"पीछे",finish:"समाप्त",of:"/",
+calPhoto:"सचेतना स्कूल, कर्नाटक",
+t0:"होम",t0d:"खुली चीज़ बंद करके आज की गतिविधि पर लौटने के लिए कभी भी 'होम' या मंत्रा लोगो दबाएँ।",t1:"भाषा चुनें",t1d:"कभी भी अंग्रेज़ी, कन्नड़ और हिंदी के बीच बदलें। गतिविधियों का विवरण हिंदी में चुनने पर अंग्रेज़ी में दिखता है।",
+t2:"स्कूल स्तर चुनें",t2d:"LPS, HPS और HS के अलग कैलेंडर हैं। पूरे साल का कैलेंडर खोलने के लिए स्तर दबाएँ।",
+t3:"आज की गतिविधि",t3d:"आज की गतिविधि उभरी हुई है। बीता कल, आने वाला कल और परसों हल्के दिखते हैं। पूरी गतिविधि देखने के लिए दबाएँ।",
+t4:"संसाधन और व्याख्या",t4d:"संसाधन में ज़रूरी सामग्री है। व्याख्या में गतिविधि का उद्देश्य और करवाने के चरण हैं।",
+t5:"इस सप्ताह",t5d:"इस सप्ताह नेतृत्व करने वाली कक्षा, विषय और घर पर अभिभावक गतिविधि।",
+t6:"डाउनलोड और प्रमाणपत्र",t6d:"पूरा कैलेंडर, खाली प्रारूप डाउनलोड करें या बच्चे के लिए प्रशंसा पत्र बनाएँ।",
+t7:"फ़ोटो दीवार",t7d:"स्कूलों की फ़ोटो हर 10 सेकंड में बदलती हैं। अपने स्कूल के नाम के साथ फ़ोटो जोड़ें।",
+t8:"फिर से मदद चाहिए?",t8d:"यह मार्गदर्शिका फिर से देखने के लिए कभी भी 'मदद' दबाएँ।",hiNote:"गतिविधि विवरण अंग्रेज़ी अनुवाद में"}
+};
+const MONTHS={en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+ enL:["January","February","March","April","May","June","July","August","September","October","November","December"],
+ kn:["ಜನವರಿ","ಫೆಬ್ರವರಿ","ಮಾರ್ಚ್","ಏಪ್ರಿಲ್","ಮೇ","ಜೂನ್","ಜುಲೈ","ಆಗಸ್ಟ್","ಸೆಪ್ಟೆಂಬರ್","ಅಕ್ಟೋಬರ್","ನವೆಂಬರ್","ಡಿಸೆಂಬರ್"],
+ hi:["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"]};
+const DOW={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],kn:["ಭಾನುವಾರ","ಸೋಮವಾರ","ಮಂಗಳವಾರ","ಬುಧವಾರ","ಗುರುವಾರ","ಶುಕ್ರವಾರ","ಶನಿವಾರ"],hi:["रविवार","सोमवार","मंगलवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"]};
+const CAL_MONTHS=["2026-06","2026-07","2026-08","2026-09","2026-10","2026-11","2026-12","2027-01","2027-02","2027-03"];
+
+/* ---------- activity-type guides (resources + explanation) ---------- */
+const G={
+demo:{icon:'<circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>',
+ skills:{en:["Confidence","Communication","Creativity"],kn:["ಆತ್ಮವಿಶ್ವಾಸ","ಸಂವಹನ","ಸೃಜನಶೀಲತೆ"]},
+ mat:{en:["Pictures, charts or real objects on the topic","Chart paper, sketch pens or crayons","A table, bench or mat to display items","A pointer stick"],kn:["ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಚಿತ್ರಗಳು, ಚಾರ್ಟ್‌ಗಳು ಅಥವಾ ನಿಜವಾದ ವಸ್ತುಗಳು","ಚಾರ್ಟ್ ಹಾಳೆ, ಸ್ಕೆಚ್ ಪೆನ್ ಅಥವಾ ಬಣ್ಣದ ಕಡ್ಡಿಗಳು","ವಸ್ತುಗಳನ್ನು ಇಡಲು ಮೇಜು, ಬೆಂಚು ಅಥವಾ ಚಾಪೆ","ತೋರಿಸುವ ಕೋಲು"]},
+ perf:{en:["One child introduces the topic in two lines.","Others hold up and show each item, explaining it in 1–2 sentences.","Invite 2 children from the audience to say what they noticed."],kn:["ಒಂದು ಮಗು ಎರಡು ವಾಕ್ಯಗಳಲ್ಲಿ ವಿಷಯ ಪರಿಚಯಿಸುತ್ತದೆ.","ಇತರರು ಪ್ರತಿ ವಸ್ತುವನ್ನು ತೋರಿಸಿ 1–2 ವಾಕ್ಯಗಳಲ್ಲಿ ವಿವರಿಸುತ್ತಾರೆ.","ಸಭೆಯಿಂದ 2 ಮಕ್ಕಳು ತಾವು ಗಮನಿಸಿದ್ದನ್ನು ಹೇಳಲಿ."]},
+ roles:{en:["Anchor","3–5 presenters","Helper to hold charts"],kn:["ನಿರೂಪಕ","3–5 ಪ್ರದರ್ಶಕರು","ಚಾರ್ಟ್ ಹಿಡಿಯುವ ಸಹಾಯಕ"]},
+ tip:{en:"Keep items big enough for the last row to see. Walk them along the line if needed.",kn:"ಕೊನೆಯ ಸಾಲಿನವರಿಗೂ ಕಾಣುವಷ್ಟು ದೊಡ್ಡ ವಸ್ತುಗಳನ್ನು ಬಳಸಿ. ಬೇಕಾದರೆ ಸಾಲಿನಲ್ಲಿ ತಿರುಗಿ ತೋರಿಸಿ."}},
+present:{icon:'<rect x="3" y="3" width="18" height="12" rx="1"/><path d="M12 15v6M8 21h8"/>',
+ skills:{en:["Communication","Confidence","Reading & writing"],kn:["ಸಂವಹನ","ಆತ್ಮವಿಶ್ವಾಸ","ಓದು ಮತ್ತು ಬರವಣಿಗೆ"]},
+ mat:{en:["Short notes or a cue card for each speaker","A chart or picture to support the talk","Books or newspaper cuttings on the topic"],kn:["ಪ್ರತಿ ಭಾಷಣಕಾರರಿಗೆ ಚಿಕ್ಕ ಟಿಪ್ಪಣಿ ಅಥವಾ ಸೂಚನಾ ಕಾರ್ಡ್","ಮಾತಿಗೆ ಪೂರಕವಾದ ಚಾರ್ಟ್ ಅಥವಾ ಚಿತ್ರ","ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪುಸ್ತಕ ಅಥವಾ ಪತ್ರಿಕೆ ತುಣುಕುಗಳು"]},
+ perf:{en:["Each child speaks for about one minute on one part of the topic.","Speak slowly and loudly, facing the whole school.","End with one question for the audience."],kn:["ಪ್ರತಿ ಮಗು ವಿಷಯದ ಒಂದು ಭಾಗದ ಬಗ್ಗೆ ಸುಮಾರು ಒಂದು ನಿಮಿಷ ಮಾತನಾಡುತ್ತದೆ.","ಇಡೀ ಶಾಲೆಯ ಕಡೆ ಮುಖ ಮಾಡಿ ನಿಧಾನವಾಗಿ, ಜೋರಾಗಿ ಮಾತನಾಡಿ.","ಸಭೆಗೆ ಒಂದು ಪ್ರಶ್ನೆಯೊಂದಿಗೆ ಮುಗಿಸಿ."]},
+ roles:{en:["Anchor","2–4 speakers","Timekeeper"],kn:["ನಿರೂಪಕ","2–4 ಭಾಷಣಕಾರರು","ಸಮಯಪಾಲಕ"]},
+ tip:{en:"Let children use their own words. A cue card is fine; reading a full page is not.",kn:"ಮಕ್ಕಳು ತಮ್ಮದೇ ಮಾತುಗಳಲ್ಲಿ ಹೇಳಲಿ. ಸೂಚನಾ ಕಾರ್ಡ್ ಸರಿ; ಪೂರ್ತಿ ಪುಟ ಓದುವುದು ಬೇಡ."}},
+roleplay:{icon:'<path d="M4 4h7v7a3.5 3.5 0 0 1-7 0zM13 8h7v7a3.5 3.5 0 0 1-7 0z"/><path d="M6 8h.01M9 8h.01M15 12h.01M18 12h.01"/>',
+ skills:{en:["Empathy","Creativity","Confidence","Teamwork"],kn:["ಸಹಾನುಭೂತಿ","ಸೃಜನಶೀಲತೆ","ಆತ್ಮವಿಶ್ವಾಸ","ತಂಡ ಕೆಲಸ"]},
+ mat:{en:["Simple props from home or class (cloth, cap, stick, masks)","Name cards for each character","A short written script or story outline"],kn:["ಮನೆ ಅಥವಾ ತರಗತಿಯ ಸರಳ ಪರಿಕರಗಳು (ಬಟ್ಟೆ, ಟೋಪಿ, ಕೋಲು, ಮುಖವಾಡ)","ಪ್ರತಿ ಪಾತ್ರಕ್ಕೆ ಹೆಸರಿನ ಕಾರ್ಡ್","ಚಿಕ್ಕ ಸಂಭಾಷಣೆ ಅಥವಾ ಕಥೆಯ ರೂಪರೇಖೆ"]},
+ perf:{en:["The anchor tells the audience who each character is.","Children act out the scene in 3–4 minutes.","Ask the audience: what was the message?"],kn:["ನಿರೂಪಕ ಪ್ರತಿ ಪಾತ್ರ ಯಾರು ಎಂದು ತಿಳಿಸುತ್ತಾರೆ.","ಮಕ್ಕಳು 3–4 ನಿಮಿಷಗಳಲ್ಲಿ ದೃಶ್ಯವನ್ನು ಅಭಿನಯಿಸುತ್ತಾರೆ.","ಸಭೆಯನ್ನು ಕೇಳಿ: ಸಂದೇಶ ಏನು?"]},
+ roles:{en:["Anchor","3–6 actors","Props helper"],kn:["ನಿರೂಪಕ","3–6 ಪಾತ್ರಧಾರಿಗಳು","ಪರಿಕರ ಸಹಾಯಕ"]},
+ tip:{en:"Costumes can be very simple. Voice and expression matter more than dress.",kn:"ವೇಷಭೂಷಣ ಸರಳವಾಗಿರಲಿ. ಉಡುಪಿಗಿಂತ ಧ್ವನಿ ಮತ್ತು ಹಾವಭಾವ ಮುಖ್ಯ."}},
+quiz:{icon:'<circle cx="12" cy="12" r="10"/><path d="M9.2 9a3 3 0 0 1 5.6 1c0 2-3 2.6-3 4.4M12 17.6h.01"/>',
+ skills:{en:["Critical thinking","Quick recall","Participation"],kn:["ವಿಮರ್ಶಾತ್ಮಕ ಚಿಂತನೆ","ತ್ವರಿತ ನೆನಪು","ಭಾಗವಹಿಸುವಿಕೆ"]},
+ mat:{en:["8–10 questions written on cards or a chart","Picture cards or objects for guessing rounds","Chalk or a small board to keep score"],kn:["ಕಾರ್ಡ್ ಅಥವಾ ಚಾರ್ಟ್‌ನಲ್ಲಿ ಬರೆದ 8–10 ಪ್ರಶ್ನೆಗಳು","ಊಹಿಸುವ ಸುತ್ತಿಗೆ ಚಿತ್ರ ಕಾರ್ಡ್‌ಗಳು ಅಥವಾ ವಸ್ತುಗಳು","ಅಂಕ ಬರೆಯಲು ಸೀಮೆಸುಣ್ಣ ಅಥವಾ ಚಿಕ್ಕ ಹಲಗೆ"]},
+ perf:{en:["The quiz master asks questions clearly, one at a time.","Children raise hands; pick from different lines and classes.","Share the right answer with one interesting fact."],kn:["ಪ್ರಶ್ನೆ ಕೇಳುವವರು ಒಂದೊಂದಾಗಿ ಸ್ಪಷ್ಟವಾಗಿ ಕೇಳುತ್ತಾರೆ.","ಮಕ್ಕಳು ಕೈ ಎತ್ತುತ್ತಾರೆ; ಬೇರೆ ಬೇರೆ ಸಾಲು, ತರಗತಿಯವರನ್ನು ಆಯ್ಕೆಮಾಡಿ.","ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಒಂದು ಕುತೂಹಲಕರ ಮಾಹಿತಿಯೊಂದಿಗೆ ಹೇಳಿ."]},
+ roles:{en:["Quiz master","Scorekeeper","Card holder"],kn:["ಪ್ರಶ್ನೆ ಕೇಳುವವರು","ಅಂಕ ಬರೆಯುವವರು","ಕಾರ್ಡ್ ಹಿಡಿಯುವವರು"]},
+ tip:{en:"Mix easy and hard questions so younger children can answer too.",kn:"ಚಿಕ್ಕ ಮಕ್ಕಳೂ ಉತ್ತರಿಸುವಂತೆ ಸುಲಭ ಮತ್ತು ಕಠಿಣ ಪ್ರಶ್ನೆಗಳನ್ನು ಬೆರೆಸಿ."}},
+discuss:{icon:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/>',
+ skills:{en:["Communication","Critical thinking","Respect for others' views"],kn:["ಸಂವಹನ","ವಿಮರ್ಶಾತ್ಮಕ ಚಿಂತನೆ","ಇತರರ ಅಭಿಪ್ರಾಯಕ್ಕೆ ಗೌರವ"]},
+ mat:{en:["One clear question or situation written on a chart","Notes on 2–3 points for each side","For an interview: a list of 5 questions"],kn:["ಚಾರ್ಟ್‌ನಲ್ಲಿ ಬರೆದ ಒಂದು ಸ್ಪಷ್ಟ ಪ್ರಶ್ನೆ ಅಥವಾ ಸನ್ನಿವೇಶ","ಪ್ರತಿ ಬದಿಗೆ 2–3 ಅಂಶಗಳ ಟಿಪ್ಪಣಿ","ಸಂದರ್ಶನಕ್ಕೆ: 5 ಪ್ರಶ್ನೆಗಳ ಪಟ್ಟಿ"]},
+ perf:{en:["The moderator reads out the question or situation.","3–5 children share views, one at a time, for 30–40 seconds each.","The moderator sums up what the group agreed on."],kn:["ನಿರ್ವಾಹಕರು ಪ್ರಶ್ನೆ ಅಥವಾ ಸನ್ನಿವೇಶ ಓದುತ್ತಾರೆ.","3–5 ಮಕ್ಕಳು ಒಬ್ಬೊಬ್ಬರಾಗಿ 30–40 ಸೆಕೆಂಡು ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.","ನಿರ್ವಾಹಕರು ಗುಂಪು ಒಪ್ಪಿದ ಅಂಶಗಳನ್ನು ಸಾರಾಂಶಗೊಳಿಸುತ್ತಾರೆ."]},
+ roles:{en:["Moderator","3–5 speakers","Note-taker"],kn:["ನಿರ್ವಾಹಕ","3–5 ಮಾತನಾಡುವವರು","ಟಿಪ್ಪಣಿ ಬರೆಯುವವರು"]},
+ tip:{en:"Agree the rule first: one person speaks, everyone listens.",kn:"ಮೊದಲು ನಿಯಮ ಒಪ್ಪಿ: ಒಬ್ಬರು ಮಾತನಾಡುವಾಗ ಎಲ್ಲರೂ ಕೇಳಬೇಕು."}},
+song:{icon:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+ skills:{en:["Participation","Teamwork","Confidence"],kn:["ಭಾಗವಹಿಸುವಿಕೆ","ತಂಡ ಕೆಲಸ","ಆತ್ಮವಿಶ್ವಾಸ"]},
+ mat:{en:["Song lyrics on a chart in large letters","A drum, plate or clapping for rhythm","A speaker or phone (optional)"],kn:["ದೊಡ್ಡ ಅಕ್ಷರಗಳಲ್ಲಿ ಚಾರ್ಟ್‌ನಲ್ಲಿ ಹಾಡಿನ ಸಾಹಿತ್ಯ","ತಾಳಕ್ಕೆ ಡೋಲು, ತಟ್ಟೆ ಅಥವಾ ಚಪ್ಪಾಳೆ","ಸ್ಪೀಕರ್ ಅಥವಾ ಫೋನ್ (ಐಚ್ಛಿಕ)"]},
+ perf:{en:["The lead singers sing one line; everyone repeats.","Add simple actions for action songs.","Sing it fully once together."],kn:["ಮುಖ್ಯ ಗಾಯಕರು ಒಂದು ಸಾಲು ಹಾಡುತ್ತಾರೆ; ಎಲ್ಲರೂ ಪುನರಾವರ್ತಿಸುತ್ತಾರೆ.","ಅಭಿನಯ ಗೀತೆಗೆ ಸರಳ ಹಾವಭಾವ ಸೇರಿಸಿ.","ಕೊನೆಗೆ ಎಲ್ಲರೂ ಒಟ್ಟಿಗೆ ಪೂರ್ತಿ ಹಾಡಿ."]},
+ roles:{en:["2–4 lead singers","Rhythm keeper","Chart holder"],kn:["2–4 ಮುಖ್ಯ ಗಾಯಕರು","ತಾಳ ಹಾಕುವವರು","ಚಾರ್ಟ್ ಹಿಡಿಯುವವರು"]},
+ tip:{en:"Choose a short song so the whole school can join by the second time.",kn:"ಎರಡನೇ ಬಾರಿಗೆ ಇಡೀ ಶಾಲೆ ಸೇರುವಂತೆ ಚಿಕ್ಕ ಹಾಡನ್ನು ಆಯ್ಕೆಮಾಡಿ."}},
+story:{icon:'<path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>',
+ skills:{en:["Listening","Speaking","Imagination"],kn:["ಆಲಿಸುವಿಕೆ","ಮಾತನಾಡುವಿಕೆ","ಕಲ್ಪನಾಶಕ್ತಿ"]},
+ mat:{en:["A storybook from the school library","3–4 picture cards for key scenes","Puppets or simple props (optional)"],kn:["ಶಾಲಾ ಗ್ರಂಥಾಲಯದ ಕಥೆ ಪುಸ್ತಕ","ಮುಖ್ಯ ದೃಶ್ಯಗಳ 3–4 ಚಿತ್ರ ಕಾರ್ಡ್‌ಗಳು","ಬೊಂಬೆಗಳು ಅಥವಾ ಸರಳ ಪರಿಕರಗಳು (ಐಚ್ಛಿಕ)"]},
+ perf:{en:["The storyteller tells the story in their own words, with expression.","Show picture cards at key moments.","Ask: what did we learn from the story?"],kn:["ಕಥೆಗಾರರು ತಮ್ಮದೇ ಮಾತುಗಳಲ್ಲಿ ಹಾವಭಾವದೊಂದಿಗೆ ಕಥೆ ಹೇಳುತ್ತಾರೆ.","ಮುಖ್ಯ ಕ್ಷಣಗಳಲ್ಲಿ ಚಿತ್ರ ಕಾರ್ಡ್ ತೋರಿಸಿ.","ಕೇಳಿ: ಕಥೆಯಿಂದ ನಾವು ಏನು ಕಲಿತೆವು?"]},
+ roles:{en:["Storyteller","Picture-card holder","Question asker"],kn:["ಕಥೆಗಾರ","ಚಿತ್ರ ಕಾರ್ಡ್ ಹಿಡಿಯುವವರು","ಪ್ರಶ್ನೆ ಕೇಳುವವರು"]},
+ tip:{en:"Telling beats reading aloud. Let the child practise the story twice at home.",kn:"ಓದುವುದಕ್ಕಿಂತ ಹೇಳುವುದು ಉತ್ತಮ. ಮಗು ಮನೆಯಲ್ಲಿ ಎರಡು ಬಾರಿ ಅಭ್ಯಾಸ ಮಾಡಲಿ."}},
+experiment:{icon:'<path d="M9 3h6M10 3v6L4.5 19A1.5 1.5 0 0 0 5.8 21h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/>',
+ skills:{en:["Scientific thinking","Problem solving","Curiosity"],kn:["ವೈಜ್ಞಾನಿಕ ಚಿಂತನೆ","ಸಮಸ್ಯೆ ಪರಿಹಾರ","ಕುತೂಹಲ"]},
+ mat:{en:["Low-cost materials for the experiment (glass, water, seeds, torch, mirror…)","A table to work on","A chart showing steps and result"],kn:["ಪ್ರಯೋಗಕ್ಕೆ ಕಡಿಮೆ ವೆಚ್ಚದ ಸಾಮಗ್ರಿಗಳು (ಲೋಟ, ನೀರು, ಬೀಜ, ಟಾರ್ಚ್, ಕನ್ನಡಿ…)","ಕೆಲಸ ಮಾಡಲು ಮೇಜು","ಹಂತಗಳು ಮತ್ತು ಫಲಿತಾಂಶ ತೋರಿಸುವ ಚಾರ್ಟ್"]},
+ perf:{en:["Ask the audience to guess what will happen.","Do the experiment step by step, explaining each step.","Explain why it happened in simple words."],kn:["ಏನಾಗುತ್ತದೆ ಎಂದು ಸಭೆ ಊಹಿಸಲಿ.","ಪ್ರತಿ ಹಂತವನ್ನು ವಿವರಿಸುತ್ತಾ ಪ್ರಯೋಗ ಮಾಡಿ.","ಏಕೆ ಹೀಗಾಯಿತು ಎಂದು ಸರಳವಾಗಿ ವಿವರಿಸಿ."]},
+ roles:{en:["Experimenter","Explainer","Helper"],kn:["ಪ್ರಯೋಗ ಮಾಡುವವರು","ವಿವರಿಸುವವರು","ಸಹಾಯಕ"]},
+ tip:{en:"Try the experiment once the day before. Keep anything sharp or hot with the teacher.",kn:"ಹಿಂದಿನ ದಿನ ಒಮ್ಮೆ ಪ್ರಯೋಗ ಮಾಡಿ ನೋಡಿ. ಚೂಪಾದ ಅಥವಾ ಬಿಸಿ ವಸ್ತುಗಳು ಶಿಕ್ಷಕರ ಬಳಿಯೇ ಇರಲಿ."}},
+awareness:{icon:'<path d="M3 11v3a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1zM17 8a5 5 0 0 1 0 8"/>',
+ skills:{en:["Responsibility","Communication","Citizenship"],kn:["ಜವಾಬ್ದಾರಿ","ಸಂವಹನ","ನಾಗರಿಕ ಪ್ರಜ್ಞೆ"]},
+ mat:{en:["Placards with slogans","A chart with 3–4 key facts","A whistle or bell to start"],kn:["ಘೋಷವಾಕ್ಯ ಫಲಕಗಳು","3–4 ಮುಖ್ಯ ಮಾಹಿತಿ ಇರುವ ಚಾರ್ಟ್","ಆರಂಭಿಸಲು ಸೀಟಿ ಅಥವಾ ಗಂಟೆ"]},
+ perf:{en:["Children read out slogans together.","Two children share facts and one action everyone can take.","End with a pledge said by the whole school."],kn:["ಮಕ್ಕಳು ಒಟ್ಟಿಗೆ ಘೋಷವಾಕ್ಯ ಹೇಳುತ್ತಾರೆ.","ಇಬ್ಬರು ಮಕ್ಕಳು ಮಾಹಿತಿ ಮತ್ತು ಎಲ್ಲರೂ ಮಾಡಬಹುದಾದ ಒಂದು ಕೆಲಸ ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.","ಇಡೀ ಶಾಲೆ ಪ್ರತಿಜ್ಞೆಯೊಂದಿಗೆ ಮುಗಿಸಿ."]},
+ roles:{en:["Slogan leader","2 fact speakers","Placard holders"],kn:["ಘೋಷವಾಕ್ಯ ನಾಯಕ","2 ಮಾಹಿತಿ ಹೇಳುವವರು","ಫಲಕ ಹಿಡಿಯುವವರು"]},
+ tip:{en:"Link it to something children can do this week at school or home.",kn:"ಮಕ್ಕಳು ಈ ವಾರ ಶಾಲೆ ಅಥವಾ ಮನೆಯಲ್ಲಿ ಮಾಡಬಹುದಾದ ಕೆಲಸಕ್ಕೆ ಜೋಡಿಸಿ."}},
+celebration:{icon:'<path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/>',
+ skills:{en:["Cultural awareness","Participation","Leadership"],kn:["ಸಾಂಸ್ಕೃತಿಕ ಅರಿವು","ಭಾಗವಹಿಸುವಿಕೆ","ನಾಯಕತ್ವ"]},
+ mat:{en:["Photo or picture of the person or festival","Flowers, rangoli colours or decorations","A short note on why the day matters"],kn:["ವ್ಯಕ್ತಿ ಅಥವಾ ಹಬ್ಬದ ಫೋಟೋ / ಚಿತ್ರ","ಹೂವು, ರಂಗೋಲಿ ಬಣ್ಣ ಅಥವಾ ಅಲಂಕಾರ","ಈ ದಿನದ ಮಹತ್ವದ ಚಿಕ್ಕ ಟಿಪ್ಪಣಿ"]},
+ perf:{en:["One child explains why we mark this day.","A short song, speech or performance by children.","End with a message everyone can follow."],kn:["ಈ ದಿನ ಏಕೆ ಆಚರಿಸುತ್ತೇವೆ ಎಂದು ಒಂದು ಮಗು ವಿವರಿಸುತ್ತದೆ.","ಮಕ್ಕಳಿಂದ ಚಿಕ್ಕ ಹಾಡು, ಭಾಷಣ ಅಥವಾ ಪ್ರದರ್ಶನ.","ಎಲ್ಲರೂ ಪಾಲಿಸಬಹುದಾದ ಸಂದೇಶದೊಂದಿಗೆ ಮುಗಿಸಿ."]},
+ roles:{en:["Anchor","Speaker","Performers","Decoration team"],kn:["ನಿರೂಪಕ","ಭಾಷಣಕಾರ","ಪ್ರದರ್ಶಕರು","ಅಲಂಕಾರ ತಂಡ"]},
+ tip:{en:"Invite an SDMC member or parent to join the celebration.",kn:"ಆಚರಣೆಗೆ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ಅಥವಾ ಪೋಷಕರನ್ನು ಆಹ್ವಾನಿಸಿ."}},
+exercise:{icon:'<circle cx="12" cy="4" r="2"/><path d="M12 6v7m0 0-4 8m4-8 4 8M6 9l6-1 6 1"/>',
+ skills:{en:["Health","Discipline","Teamwork"],kn:["ಆರೋಗ್ಯ","ಶಿಸ್ತು","ತಂಡ ಕೆಲಸ"]},
+ mat:{en:["Open ground with space between lines","A whistle","Music or counting rhythm (optional)"],kn:["ಸಾಲುಗಳ ನಡುವೆ ಜಾಗವಿರುವ ಮೈದಾನ","ಸೀಟಿ","ಸಂಗೀತ ಅಥವಾ ಎಣಿಕೆಯ ತಾಳ (ಐಚ್ಛಿಕ)"]},
+ perf:{en:["Leaders face the school and show each exercise.","Everyone follows for 8 counts per exercise.","End with deep breathing for one minute."],kn:["ನಾಯಕರು ಶಾಲೆಯ ಕಡೆ ಮುಖ ಮಾಡಿ ಪ್ರತಿ ವ್ಯಾಯಾಮ ತೋರಿಸುತ್ತಾರೆ.","ಎಲ್ಲರೂ ಪ್ರತಿ ವ್ಯಾಯಾಮಕ್ಕೆ 8 ಎಣಿಕೆ ಅನುಸರಿಸುತ್ತಾರೆ.","ಒಂದು ನಿಮಿಷ ದೀರ್ಘ ಉಸಿರಾಟದೊಂದಿಗೆ ಮುಗಿಸಿ."]},
+ roles:{en:["2–4 exercise leaders","Counter"],kn:["2–4 ವ್ಯಾಯಾಮ ನಾಯಕರು","ಎಣಿಕೆ ಮಾಡುವವರು"]},
+ tip:{en:"Rotate leaders each Saturday so new children lead every week.",kn:"ಪ್ರತಿ ಶನಿವಾರ ಹೊಸ ಮಕ್ಕಳು ಮುನ್ನಡೆಸುವಂತೆ ನಾಯಕರನ್ನು ಬದಲಿಸಿ."}},
+holiday:{icon:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+ skills:{en:["Rest and family time"],kn:["ವಿಶ್ರಾಂತಿ ಮತ್ತು ಕುಟುಂಬದ ಸಮಯ"]},
+ mat:{en:["No materials needed"],kn:["ಯಾವುದೇ ಸಾಮಗ್ರಿ ಬೇಕಿಲ್ಲ"]},
+ perf:{en:["No assembly activity. Children can try the week's parent activity at home."],kn:["ಪ್ರಾರ್ಥನಾ ಚಟುವಟಿಕೆ ಇಲ್ಲ. ಮಕ್ಕಳು ಮನೆಯಲ್ಲಿ ವಾರದ ಪೋಷಕರ ಚಟುವಟಿಕೆ ಮಾಡಬಹುದು."]},
+ roles:{en:["—"],kn:["—"]},tip:{en:"Use the next school day to recap.",kn:"ಮುಂದಿನ ಶಾಲಾ ದಿನ ಪುನರಾವರ್ತಿಸಿ."}},
+general:{icon:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>',
+ skills:{en:["Participation","Teamwork","Confidence"],kn:["ಭಾಗವಹಿಸುವಿಕೆ","ತಂಡ ಕೆಲಸ","ಆತ್ಮವಿಶ್ವಾಸ"]},
+ mat:{en:["Charts or pictures on the topic","Chart paper and sketch pens","Any simple objects the activity needs"],kn:["ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಚಾರ್ಟ್ ಅಥವಾ ಚಿತ್ರಗಳು","ಚಾರ್ಟ್ ಹಾಳೆ ಮತ್ತು ಸ್ಕೆಚ್ ಪೆನ್","ಚಟುವಟಿಕೆಗೆ ಬೇಕಾದ ಸರಳ ವಸ್ತುಗಳು"]},
+ perf:{en:["The anchor explains the activity in two lines.","Children lead the activity with the whole school taking part.","Close with one thing everyone learnt."],kn:["ನಿರೂಪಕರು ಎರಡು ವಾಕ್ಯಗಳಲ್ಲಿ ಚಟುವಟಿಕೆ ವಿವರಿಸುತ್ತಾರೆ.","ಇಡೀ ಶಾಲೆ ಭಾಗವಹಿಸುವಂತೆ ಮಕ್ಕಳು ಚಟುವಟಿಕೆ ನಡೆಸುತ್ತಾರೆ.","ಎಲ್ಲರೂ ಕಲಿತ ಒಂದು ಅಂಶದೊಂದಿಗೆ ಮುಗಿಸಿ."]},
+ roles:{en:["Anchor","3–5 leaders"],kn:["ನಿರೂಪಕ","3–5 ನಾಯಕರು"]},
+ tip:{en:"Give the lead to children who usually stay quiet.",kn:"ಸಾಮಾನ್ಯವಾಗಿ ಮೌನವಾಗಿರುವ ಮಕ್ಕಳಿಗೆ ನೇತೃತ್ವ ನೀಡಿ."}}
+};
+function typeKey(d){
+  const t=(d.type_kn||"")+" "+(d.type_en||""), ti=(d.title_kn||"")+" "+(d.title_en||"");
+  if(/ರಜೆ|holiday|ರಂಜಾನ್|Ramzan/i.test(ti+" "+t)) return "holiday";
+  if(/ವ್ಯಾಯಾಮ|exercise|ಯೋಗ/i.test(ti)) return "exercise";
+  const k=d.type_kn||"";
+  if(/ಪ್ರಯೋಗ/.test(k)) return "experiment";
+  if(/ರಸ ?ಪ್ರಶ್ನೆ|ಪ್ರಶ್ನೋತ್ತರ|ಪ್ರಶ್ನೆ-ಉತ್ತರ|ಒಗಟು|ಥಟ್|ತ್ವರಿತ|ಊಹಿಸಿ|ಗುರುತಿಸಿ|ಅನುಕ್ರಮ|ಪದರಚನೆ/.test(k)) return "quiz";
+  if(/ಪಾತ್ರಾಭಿನಯ|ಮೂಕಾಭಿನಯ|ಅನುಕರಣೆ|ಛದ್ಮ/.test(k)) return "roleplay";
+  if(/ಚರ್ಚೆ|ಸಂವಾದ|ಸಂಭಾಷಣೆ|ವಿಶ್ಲೇಷಣೆ|ವಾದ|ಅಭಿಪ್ರಾಯ|ಸಂದರ್ಶನ/.test(k)) return "discuss";
+  if(/ಗೀತೆ|ಗಾಯನ|ಸಾಂಗ್/.test(k)) return "song";
+  if(/ನಿರೂಪಣೆ|ವಾಚನ|ಭಾಷಣ/.test(k)) return "story";
+  if(/ಜಾಗೃತಿ|ಘೋಷ/.test(k)) return "awareness";
+  if(/ಆಚರಣೆ|ಹಬ್ಬ|ಸಂಭ್ರಮ/.test(k)) return "celebration";
+  if(/ಪ್ರದರ್ಶನ/.test(k)) return "demo";
+  if(/ಪ್ರಸ್ತುತಿ|ಪರಿಚಯ|ಮಾರ್ಗದರ್ಶ|ರಚಿಸಿ/.test(k)) return "present";
+  if(/ಜಯಂತಿ|ದಿನಾಚರಣೆ|ದಿನ$|Day\b|Jayanti/i.test(ti)) return "celebration";
+  return "general";
+}
+
+/* ---------- state ---------- */
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let lang=store.get("sach-lang","kn"); if(!I18N[lang]) lang="kn";
+let level=store.get("sach-level","LPS");
+let DATA=null;
+const done=store.get("sach-done",{});
+const today=new Date(); today.setHours(0,0,0,0);
+const TODAY=iso(today);
+
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function parse(s){const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function addDays(s,n){const d=parse(s);d.setDate(d.getDate()+n);return iso(d)}
+function t(k){return (I18N[lang]&&I18N[lang][k]!=null&&I18N[lang][k]!=="")?I18N[lang][k]:I18N.en[k]||k}
+function cl(){return lang==="kn"?"kn":"en"}
+function f(o,b){if(!o)return "";return o[b+"_"+cl()]||o[b+"_kn"]||o[b+"_en"]||""}
+function gl(o){return o[cl()]||o.en}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function fmtDate(s,long){const d=parse(s);const m=lang==="kn"?MONTHS.kn:lang==="hi"?MONTHS.hi:(long?MONTHS.enL:MONTHS.en);return d.getDate()+" "+m[d.getMonth()]+(long?" "+d.getFullYear():"")}
+function dow(s){return DOW[lang][parse(s).getDay()]}
+function icon(k,cls){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'+(cls?' class="'+cls+'"':'')+'>'+G[k].icon+'</svg>'}
+function day(s){return DATA&&DATA[level].days[s]}
+function week(d){return d&&d.w>=0?DATA[level].weeks[d.w]:null}
+function typeLabel(d){return f(d,"type")||""}
+
+/* ---------- capabilities ---------- */
+const caps={};
+function cap(name){if(!caps[name]){caps[name]=(window.claude&&window.claude.use?window.claude.use(name):Promise.resolve(null)).catch(()=>null)}return caps[name]}
+
+/* ---------- static text ---------- */
+function applyI18n(){
+  document.documentElement.lang=lang==="kn"?"kn":lang==="hi"?"hi":"en";
+  document.querySelectorAll("[data-i]").forEach(el=>{el.textContent=t(el.dataset.i)});
+  document.querySelectorAll("#langSw button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  document.querySelectorAll(".lvl").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.level===level)));
+  renderSteps();renderImpact();
+}
+function renderSteps(){
+  document.getElementById("steps").innerHTML=[1,2,3,4].map(i=>'<div class="step"><div class="n">'+i+'</div><h3>'+esc(t("s"+i))+'</h3><p>'+esc(t("s"+i+"d"))+'</p></div>').join("");
+}
+function renderImpact(){
+  const st=[["47,000","i1"],["80%","i2"],["90%","i3"],["550","i4"]];
+  document.getElementById("impact").innerHTML=st.map(s=>'<div class="stat"><b>'+s[0]+'</b><span>'+esc(t(s[1]))+'</span></div>').join("");
+}
+
+/* ---------- strip ---------- */
+function relLabel(s){const diff=Math.round((parse(s)-today)/864e5);return diff===0?t("today"):diff===-1?t("yesterday"):diff===1?t("tomorrow"):diff===2?t("dayAfter"):dow(s)}
+function renderStrip(){
+  if(!DATA)return;
+  document.getElementById("levelEyebrow").textContent=level+" · "+t(level+"n");
+  document.getElementById("todayLabel").textContent=dow(TODAY)+", "+fmtDate(TODAY,true);
+  const order=[-1,0,1,2];
+  document.getElementById("strip").innerHTML=order.map(o=>dayCard(addDays(TODAY,o),o===0)).join("");
+  renderWeek();
+}
+function dayCard(s,isToday){
+  const d=day(s), sun=parse(s).getDay()===0;
+  const head='<div class="rel">'+esc(relLabel(s))+'</div><div class="dnum"><b>'+parse(s).getDate()+'</b><span>'+esc(dow(s))+' · '+esc(fmtDate(s))+'</span></div>';
+  if(!d){
+    return '<div class="card day '+(isToday?"today":"faded")+'" data-day="'+s+'"><div>'+head+'</div><div class="noas">'+esc(sun?t("sunday"):t("noAssembly"))+'</div><div class="meta">'+esc(sun?"":t("notListed"))+'</div></div>';
+  }
+  const k=typeKey(d), w=week(d), tl=typeLabel(d);
+  let h='<div class="card day '+(isToday?"today":"faded")+'" data-day="'+s+'" '+(isToday?'':'role="button" tabindex="0" aria-label="'+esc(relLabel(s)+": "+f(d,"title"))+'"')+'>'+head;
+  if(d.img) h+=picTag(s,"dpic");
+  h+='<div class="ttl">'+esc(f(d,"title")||tl)+'</div>';
+  if(tl) h+='<span class="tag">'+icon(k)+esc(tl)+'</span>';
+  if(w) h+='<div class="meta">'+esc(f(w,"grade"))+' · '+esc(f(w,"theme"))+'</div>';
+  if(isToday){
+    if(f(d,"desc")) h+='<p class="desc">'+esc(f(d,"desc"))+'</p>';
+    const isDone=!!done[level+":"+s];
+    h+='<div class="btns" id="todayBtns"><button class="btn pri" type="button" data-act="res" data-d="'+s+'">'+svgBox()+esc(t("resources"))+'</button><button class="btn sun" type="button" data-act="exp" data-d="'+s+'">'+svgBulb()+esc(t("explain"))+'</button><button class="btn '+(isDone?"done":"ghost")+'" type="button" data-act="done" data-d="'+s+'" aria-pressed="'+isDone+'">'+svgCheck()+esc(isDone?t("doneT"):t("markDone"))+'</button></div>';
+  } else h+='<div class="meta" style="margin-top:auto">'+esc(t("viewDetails"))+' →</div>';
+  return h+'</div>';
+}
+/* each month's pictures are packed in one sheet: 6 columns, img=[index,rows] */
+function picTag(s,cls,lv){
+  const L=lv||level,d=DATA[L].days[s];if(!d||!d.img)return '';
+  const i=d.img[0],rows=d.img[1],col=i%6,row=Math.floor(i/6);
+  const st="background-image:url('sprites/"+L+"_"+s.slice(0,7)+".jpg');background-size:600% "+(rows*100)+"%;background-position:"+(col*20)+"% "+(rows>1?row/(rows-1)*100:0)+"%";
+  return '<span class="pic '+cls+'" role="img" aria-label="'+esc(f(d,"title"))+'" style="'+st+'"></span>';
+}
+function svgBox(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/></svg>'}
+function svgBulb(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>'}
+function svgCheck(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>'}
+
+function renderWeek(){
+  const el=document.getElementById("weekCard");
+  // find this week's row: today, or the nearest school day ahead
+  let s=TODAY,d=day(s),n=0; while(!d&&n<10){s=addDays(s,1);d=day(s);n++}
+  const w=week(d);
+  if(!w){el.innerHTML='<div class="eyebrow">'+esc(t("weekE"))+'</div><div class="noas">'+esc(t("noAssembly"))+'</div>';return}
+  const dates=Object.keys(DATA[level].days).filter(x=>DATA[level].days[x].w===d.w).sort();
+  const cnt=Object.keys(done).filter(k=>k.startsWith(level+":")).length;
+  let h='<div><div class="eyebrow">'+esc(t("weekE"))+'</div><h3 style="font-size:24px;margin-top:4px">'+esc(f(w,"grade"))+' <span class="muted" style="font-size:16px;font-weight:600">'+esc(t("leads"))+'</span></h3></div>';
+  h+='<div><span class="chip">'+esc(t("theme"))+': '+esc(f(w,"theme"))+'</span></div>';
+  h+='<div class="wkdays">'+dates.map(x=>{const dd=day(x);return '<button type="button" class="wkd'+(x===TODAY?" is-today":"")+'" data-day="'+x+'" title="'+esc(f(dd,"title"))+'"><b>'+parse(x).getDate()+'</b><span>'+esc(DOW[lang][parse(x).getDay()].slice(0,lang==="en"?3:4))+'</span><span>'+esc(f(dd,"title"))+'</span></button>'}).join("")+'</div>';
+  if(f(w,"parent")) h+='<div class="parent"><div class="eyebrow">'+esc(t("parentT"))+'</div><b>'+esc(f(w,"parent"))+'</b>'+(f(w,"parent_desc")?'<span class="muted" style="font-size:14px">'+esc(f(w,"parent_desc"))+'</span>':'')+'</div>';
+  h+='<div class="note">✓ '+cnt+' '+esc(t("doneCount"))+'</div>';
+  el.innerHTML=h;
+}
+
+/* ---------- modal system ---------- */
+let lastFocus=null;
+function openModal(title,body,opts){
+  opts=opts||{};
+  closeModal(true);
+  lastFocus=document.activeElement;
+  const root=document.getElementById("modalRoot");
+  root.innerHTML='<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="panel'+(opts.sm?" sm":"")+'"><div class="ph"><h3 id="mTitle">'+title+'</h3><button class="x" type="button" id="mClose" aria-label="'+esc(t("close"))+'">×</button></div><div class="pb" id="mBody">'+body+'</div></div></div>';
+  document.getElementById("mClose").onclick=()=>closeModal();
+  document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+  document.body.style.overflow="hidden";
+  setTimeout(()=>{const c=document.getElementById("mClose");c&&c.focus()},30);
+  return document.getElementById("mBody");
+}
+function closeModal(silent){const r=document.getElementById("modalRoot");if(!r.innerHTML)return;r.innerHTML="";document.body.style.overflow="";if(!silent&&lastFocus&&lastFocus.focus)lastFocus.focus()}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(tourOn)endTour();else closeModal()}});
+
+/* ---------- day detail / resources / explanation ---------- */
+function detailHTML(s){
+  const d=day(s), w=week(d), k=typeKey(d);
+  let h=picTag(s,"mpic")+'<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">'+(typeLabel(d)?'<span class="tag">'+icon(k)+esc(typeLabel(d))+'</span>':'')+(w?'<span class="chip">'+esc(f(w,"grade"))+' · '+esc(f(w,"theme"))+'</span>':'')+'</div>';
+  if(f(d,"desc")) h+='<p class="desc" style="font-size:17px">'+esc(f(d,"desc"))+'</p>';
+  if(lang==="kn"&&d.desc_en) h+='<p class="note" style="margin:0">'+esc(d.title_en)+' — '+esc(d.desc_en)+'</p>';
+  if(lang!=="kn"&&d.desc_kn) h+='<p class="note" style="margin:0">'+esc(d.title_kn)+' — '+esc(d.desc_kn)+'</p>';
+  const isDone=!!done[level+":"+s];
+  h+='<div class="btns"><button class="btn pri" type="button" data-act="res" data-d="'+s+'">'+svgBox()+esc(t("resources"))+'</button><button class="btn sun" type="button" data-act="exp" data-d="'+s+'">'+svgBulb()+esc(t("explain"))+'</button><button class="btn '+(isDone?"done":"ghost")+'" type="button" data-act="done" data-d="'+s+'" aria-pressed="'+isDone+'">'+svgCheck()+esc(isDone?t("doneT"):t("markDone"))+'</button></div>';
+  if(w&&f(w,"parent")) h+='<div class="parent"><div class="eyebrow">'+esc(t("parentT"))+'</div><b>'+esc(f(w,"parent"))+'</b>'+(f(w,"parent_desc")?'<span class="muted" style="font-size:14px">'+esc(f(w,"parent_desc"))+'</span>':'')+'</div>';
+  return h;
+}
+function openDay(s){
+  const d=day(s);
+  if(!d){openModal(esc(dow(s)+", "+fmtDate(s,true)),'<div class="noas">'+esc(parse(s).getDay()===0?t("sunday"):t("notListed"))+'</div>',{sm:true});return}
+  openModal('<span class="muted" style="font-size:15px;display:block;font-weight:600">'+esc(level+" · "+relLabel(s)+" · "+dow(s)+", "+fmtDate(s,true))+'</span>'+esc(f(d,"title")||typeLabel(d)),detailHTML(s),{sm:true});
+}
+function openResources(s){
+  const d=day(s), w=week(d), k=typeKey(d), g=G[k];
+  let h='<p class="muted" style="margin:0">'+esc(t("onDay"))+': <b>'+esc(dow(s)+", "+fmtDate(s,true))+'</b> · '+esc(level)+'</p>';
+  h+='<div><h4 style="font-size:18px;margin-bottom:6px">'+esc(t("matT"))+'</h4><ul class="list">'+gl(g.mat).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>';
+  if(f(d,"desc")) h+='<div class="ok"><b>'+esc(t("what"))+':</b> '+esc(f(d,"desc"))+'</div>';
+  if(k!=="holiday") h+='<div><h4 style="font-size:18px;margin-bottom:6px">'+esc(t("prepT"))+'</h4><ul class="list"><li>'+esc(t("prep1"))+'</li><li>'+esc(t("prep2"))+'</li><li>'+esc(t("prep3"))+'</li></ul></div>';
+  h+='<div><h4 style="font-size:18px;margin-bottom:6px">'+esc(t("roles"))+'</h4><div class="skills">'+gl(g.roles).map(x=>'<span class="chip">'+esc(x)+'</span>').join("")+'</div></div>';
+  if(w&&f(w,"parent")) h+='<div class="parent"><div class="eyebrow">'+esc(t("parentRes"))+'</div><b>'+esc(f(w,"parent"))+'</b>'+(f(w,"parent_desc")?'<span class="muted" style="font-size:14px">'+esc(f(w,"parent_desc"))+'</span>':'')+'</div>';
+  openModal(esc(t("resources"))+' · '+esc(f(d,"title")||typeLabel(d)),h,{sm:true});
+}
+function openExplain(s){
+  const d=day(s), k=typeKey(d), g=G[k];
+  let h='';
+  if(f(d,"desc")) h+='<div><h4 style="font-size:18px;margin-bottom:4px">'+esc(t("what"))+'</h4><p class="desc">'+esc(f(d,"desc"))+'</p></div>';
+  h+='<div><h4 style="font-size:18px;margin-bottom:6px">'+esc(t("why"))+'</h4><div class="skills">'+gl(g.skills).map(x=>'<span class="tag">'+esc(x)+'</span>').join("")+'</div></div>';
+  if(k!=="holiday"){
+    h+='<div><h4 style="font-size:18px;margin-bottom:8px">'+esc(t("how"))+'</h4><div style="display:grid;gap:8px">';
+    const ph=[[t("p1"),[t("plan1"),t("plan2")]],[t("p2"),[t("prep1"),t("prep2"),t("prep3")]],[t("p3"),gl(g.perf)],[t("p4"),[t("ref1"),t("ref2"),t("ref3")]]];
+    h+=ph.map((p,i)=>'<div class="phase"><div class="n">'+(i+1)+'</div><h4>'+esc(p[0])+'</h4><ul class="list">'+p[1].map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>').join("");
+    h+='</div></div>';
+    h+='<div class="row"><div class="ok"><b>'+esc(t("time"))+':</b> '+esc(t("timeV"))+'</div><div class="ok"><b>'+esc(t("roles"))+':</b> '+esc(gl(g.roles).join(", "))+'</div></div>';
+  } else h+='<p>'+esc(gl(g.perf)[0])+'</p>';
+  h+='<div class="parent"><div class="eyebrow">'+esc(t("tip"))+'</div><span>'+esc(gl(g.tip))+'</span></div>';
+  openModal(esc(t("explain"))+' · '+esc(f(d,"title")||typeLabel(d)),h,{sm:true});
+}
+function toggleDone(s,btn){
+  const key=level+":"+s; if(done[key])delete done[key]; else done[key]=1; store.set("sach-done",done);
+  const on=!!done[key];
+  document.querySelectorAll('[data-act="done"][data-d="'+s+'"]').forEach(b=>{b.className="btn "+(on?"done":"ghost");b.setAttribute("aria-pressed",on);b.innerHTML=svgCheck()+esc(on?t("doneT"):t("markDone"))});
+  renderWeek();
+}
+
+/* ---------- calendar modal ---------- */
+let calMonth=null;
+function openCalendar(lv){
+  level=lv;store.set("sach-level",level);applyI18n();renderStrip();
+  const ym=TODAY.slice(0,7);
+  calMonth=CAL_MONTHS.includes(ym)?ym:(TODAY<CAL_MONTHS[0]+"-01"?CAL_MONTHS[0]:CAL_MONTHS[CAL_MONTHS.length-1]);
+  const types=[...new Set(Object.values(DATA[level].days).map(d=>typeLabel(d)).filter(Boolean))].sort();
+  const body='<div class="calbar"><button class="btn ghost" type="button" id="cPrev" aria-label="'+esc(t("prev"))+'">‹</button><div class="m" id="cM"></div><button class="btn ghost" type="button" id="cNext" aria-label="'+esc(t("next"))+'">›</button><input class="grow" id="cSearch" type="search" placeholder="'+esc(t("search"))+'"><select id="cType"><option value="">'+esc(t("allTypes"))+'</option>'+types.map(x=>'<option>'+esc(x)+'</option>').join("")+'</select></div><div class="mtabs" id="cTabs"></div><div id="cGrid" style="display:grid;gap:10px"></div>';
+  openModal(esc(level)+' · '+esc(t(level+"n"))+' — '+esc(t("calT"))+' 2026–27',body);
+  document.getElementById("cPrev").onclick=()=>{const i=CAL_MONTHS.indexOf(calMonth);if(i>0){calMonth=CAL_MONTHS[i-1];drawCal()}};
+  document.getElementById("cNext").onclick=()=>{const i=CAL_MONTHS.indexOf(calMonth);if(i<CAL_MONTHS.length-1){calMonth=CAL_MONTHS[i+1];drawCal()}};
+  document.getElementById("cSearch").oninput=drawCal;document.getElementById("cType").onchange=drawCal;
+  drawCal();
+}
+function monthName(ym){const m=+ym.slice(5,7)-1;return (lang==="kn"?MONTHS.kn:lang==="hi"?MONTHS.hi:MONTHS.enL)[m]+" "+ym.slice(0,4)}
+function drawCal(){
+  const q=(document.getElementById("cSearch").value||"").trim().toLowerCase(), ty=document.getElementById("cType").value;
+  const grid=document.getElementById("cGrid");
+  document.getElementById("cM").textContent=monthName(calMonth);
+  document.getElementById("cTabs").innerHTML=CAL_MONTHS.map(m=>'<button type="button" data-m="'+m+'" aria-pressed="'+(m===calMonth)+'">'+esc((lang==="kn"?MONTHS.kn:lang==="hi"?MONTHS.hi:MONTHS.en)[+m.slice(5)-1])+'</button>').join("");
+  document.querySelectorAll("#cTabs button").forEach(b=>b.onclick=()=>{calMonth=b.dataset.m;document.getElementById("cSearch").value="";document.getElementById("cType").value="";drawCal()});
+  const days=DATA[level].days;
+  if(q||ty){
+    const res=Object.keys(days).sort().filter(s=>{const d=days[s];if(ty&&typeLabel(d)!==ty)return false;if(!q)return true;return [d.title_kn,d.title_en,d.desc_kn,d.desc_en,d.type_kn,d.type_en].join(" ").toLowerCase().includes(q)});
+    grid.innerHTML='<div class="note">'+res.length+' '+esc(t("results"))+'</div>'+(res.length?'<div class="results">'+res.slice(0,120).map(s=>{const d=days[s];return '<button type="button" class="res" data-day="'+s+'"><b>'+esc(fmtDate(s))+'</b><span style="font-weight:700">'+esc(f(d,"title")||typeLabel(d))+'</span><span class="meta">'+esc(typeLabel(d))+(week(d)?' · '+esc(f(week(d),"grade")):'')+'</span></button>'}).join("")+'</div>':'<p>'+esc(t("noRes"))+'</p>');
+    return;
+  }
+  const inM=Object.keys(days).filter(s=>s.startsWith(calMonth)).sort();
+  const wIdx=[...new Set(inM.map(s=>days[s].w))];
+  let h='<div class="dows"><div>'+esc(t("gradeArea"))+'</div><div>'+["mon","tue","wed","thu","fri","sat"].map(x=>'<span>'+esc(t(x))+'</span>').join("")+'</div><div>'+esc(t("parentCol"))+'</div></div>';
+  h+=wIdx.map(wi=>{
+    const w=DATA[level].weeks[wi]; const ds=inM.filter(s=>days[s].w===wi);
+    const slots=[1,2,3,4,5,6].map(dw=>ds.filter(s=>parse(s).getDay()===dw));
+    const cells=slots.map(arr=>arr.length?arr.map(s=>{const d=days[s],k=typeKey(d);return '<button type="button" class="cell'+(s===TODAY?" is-today":"")+(k==="holiday"?" hol":"")+'" data-day="'+s+'"><b>'+parse(s).getDate()+'</b>'+picTag(s,"")+'<span class="t">'+esc(f(d,"title")||typeLabel(d))+'</span>'+(typeLabel(d)&&k!=="holiday"?'<span class="tag">'+esc(typeLabel(d))+'</span>':'')+'</button>'}).join(""):'<div class="cell empty"></div>').join("");
+    return '<div class="wk"><div class="wk-h"><b>'+esc(f(w,"grade"))+'</b><span>'+esc(f(w,"theme"))+'</span></div><div class="wk-d">'+cells+'</div><div class="wk-p"><div class="eyebrow">'+esc(t("parentCol"))+'</div><b>'+esc(f(w,"parent"))+'</b></div></div>';
+  }).join("");
+  grid.innerHTML=h;
+}
+
+/* ---------- downloads ---------- */
+async function saveFile(filename,data,msgEl){
+  const dl=await cap("downloads");
+  if(!dl){msgEl.innerHTML='<div class="err">'+esc(t("dlNo"))+'</div>';return}
+  try{await dl.save({filename,data});msgEl.innerHTML='<div class="ok">'+esc(t("saved"))+'</div>'}
+  catch(e){msgEl.innerHTML='<div class="err">'+esc(e&&e.code==="declined"?t("declined"):(e&&e.message)||t("dlNo"))+'</div>'}
+}
+function openDownload(){
+  const b=openModal(esc(t("dlT")),'<p style="margin:0">'+esc(t("dlP"))+'</p><div style="display:grid;gap:8px">'+["LPS","HPS","HS"].map(l=>'<button class="tool" type="button" data-pdf="'+l+'" style="grid-template-columns:auto 1fr;align-items:center">'+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v3h16v-3"/></svg><span><b style="display:block">'+l+' · '+esc(t(l+"n"))+'</b><span>'+esc(t("dlBtn"))+' · '+esc(t("dlSize"))+'</span></span></button>').join("")+'</div><div id="dlMsg"></div>',{sm:true});
+  b.querySelectorAll("[data-pdf]").forEach(btn=>btn.onclick=async()=>{
+    const l=btn.dataset.pdf,msg=document.getElementById("dlMsg");msg.innerHTML='<div class="note">…</div>';
+    try{const r=await fetch("pdf/Sachetana_"+l+"_Calendar_2026-27.pdf");if(!r.ok)throw new Error("HTTP "+r.status);const blob=await r.blob();await saveFile("Sachetana_"+l+"_Calendar_2026-27.pdf",blob,msg)}
+    catch(e){msg.innerHTML='<div class="err">'+esc(e.message)+'</div>'}
+  });
+}
+
+/* blank format */
+function openFormat(){
+  const b=openModal(esc(t("fmtT")),'<p style="margin:0">'+esc(t("fmtP"))+'</p><div class="row"><div class="field"><label for="fLv">'+esc(t("level"))+'</label><select id="fLv">'+["LPS","HPS","HS"].map(l=>'<option value="'+l+'"'+(l===level?" selected":"")+'>'+l+' · '+esc(t(l+"n"))+'</option>').join("")+'</select></div><div class="field"><label for="fM">'+esc(t("month"))+'</label><select id="fM"><option value="">'+esc(t("blankM"))+'</option>'+CAL_MONTHS.concat(["2027-04","2027-05"]).map(m=>'<option value="'+m+'">'+esc(monthName(m))+'</option>').join("")+'</select></div></div><div class="field"><label for="fL">'+esc(t("language"))+'</label><select id="fL"><option value="kn">ಕನ್ನಡ</option><option value="en">English</option><option value="hi">हिंदी</option></select></div><canvas id="fCv" class="cert-prev" width="1754" height="2480" style="aspect-ratio:1754/2480;max-height:420px;width:auto;justify-self:center"></canvas><div class="btns"><button class="btn pri" type="button" id="fPng">'+esc(t("fmtPng"))+'</button><button class="btn" type="button" id="fCsv">'+esc(t("fmtCsv"))+'</button></div><div id="fMsg"></div>',{sm:true});
+  document.getElementById("fL").value=lang;
+  const draw=()=>drawFormat(document.getElementById("fCv"),document.getElementById("fLv").value,document.getElementById("fM").value,document.getElementById("fL").value);
+  ["fLv","fM","fL"].forEach(id=>document.getElementById(id).onchange=draw);
+  fontsReady().then(draw);
+  document.getElementById("fPng").onclick=()=>{const c=document.getElementById("fCv");c.toBlob(bl=>saveFile("Sachetana_"+document.getElementById("fLv").value+"_calendar_format"+(document.getElementById("fM").value?"_"+document.getElementById("fM").value:"")+".png",bl,document.getElementById("fMsg")),"image/png")};
+  document.getElementById("fCsv").onclick=()=>{
+    const m=document.getElementById("fM").value,L=document.getElementById("fL").value,lv=document.getElementById("fLv").value;
+    const head={en:["Date","Day","Grade","Weekly theme","Activity title","Activity type","Activity details","Parent activity","Resources needed","Child leaders"],kn:["ದಿನಾಂಕ","ವಾರ","ತರಗತಿ","ವಾರದ ವಿಷಯ","ಚಟುವಟಿಕೆ","ಚಟುವಟಿಕೆಯ ವಿಧ","ಚಟುವಟಿಕೆಯ ವಿವರ","ಪೋಷಕರ ಚಟುವಟಿಕೆ","ಬೇಕಾದ ಸಾಮಗ್ರಿ","ನೇತೃತ್ವ ವಹಿಸುವ ಮಕ್ಕಳು"],hi:["तारीख","दिन","कक्षा","साप्ताहिक विषय","गतिविधि","गतिविधि प्रकार","गतिविधि विवरण","अभिभावक गतिविधि","ज़रूरी सामग्री","नेतृत्व करने वाले बच्चे"]}[L];
+    const rows=[head];
+    if(m){const d=parse(m+"-01");while(iso(d).startsWith(m)){if(d.getDay()!==0)rows.push([iso(d),DOW[L][d.getDay()],"","","","","","","",""]);d.setDate(d.getDate()+1)}}
+    else for(let i=0;i<26;i++)rows.push(["","","","","","","","","",""]);
+    const csv="﻿"+rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(",")).join("\r\n");
+    saveFile("Sachetana_"+lv+"_calendar_template"+(m?"_"+m:"")+".csv",csv,document.getElementById("fMsg"));
+  };
+}
+function fontsReady(){if(!document.fonts)return Promise.resolve();return Promise.all(['800 40px "Baloo Tamma 2"','700 40px "Baloo Tamma 2"','600 20px "Noto Sans Kannada"','600 20px "Noto Sans Devanagari"','800 40px "Baloo 2"','600 20px "Nunito Sans"'].map(x=>document.fonts.load(x,"ಸಚೇತನ सचेतना Aa").catch(()=>null))).then(()=>null)}
+const partnersImg=new Image();partnersImg.src="partners.png";
+const mantraImg=new Image();mantraImg.src="mantra-logo.png";
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
+function drawFormat(cv,lv,m,L){
+  const c=cv.getContext("2d"),W=cv.width,H=cv.height;
+  const FD=L==="hi"?'"Baloo 2","Noto Sans Devanagari",sans-serif':'"Baloo Tamma 2","Noto Sans Kannada",sans-serif';
+  const FB=L==="hi"?'"Noto Sans Devanagari",sans-serif':L==="kn"?'"Noto Sans Kannada",sans-serif':'"Nunito Sans",sans-serif';
+  const T={kn:{title:"ಸಚೇತನ",sub:{LPS:"ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯ",HPS:"ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯ",HS:"ಪ್ರೌಢ ಶಾಲೆಯ"}[lv]+" ಚಟುವಟಿಕೆಗಳ ಕ್ಯಾಲೆಂಡರ್",mon:"ತಿಂಗಳು",school:"ಶಾಲೆ",ga:"ತರಗತಿ & ಕ್ಷೇತ್ರ",days:["ಸೋಮವಾರ","ಮಂಗಳವಾರ","ಬುಧವಾರ","ಗುರುವಾರ","ಶುಕ್ರವಾರ","ಶನಿವಾರ"],par:"ಪೋಷಕರ ಚಟುವಟಿಕೆಗಳು",det:"ಚಟುವಟಿಕೆಗಳ ವಿವರ",app:"ವಿದ್ಯಾರ್ಥಿಗಳ ಮೆಚ್ಚುಗೆ",grade:"ತರಗತಿ",theme:"ವಿಷಯ",act:"ಚಟುವಟಿಕೆ",type:"ವಿಧ"},
+    en:{title:"Sachetana",sub:{LPS:"Lower Primary",HPS:"Higher Primary",HS:"High School"}[lv]+" Activity Calendar",mon:"Month",school:"School",ga:"Grade & area",days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],par:"Parent activities",det:"Activity details",app:"Students' appreciation",grade:"Grade",theme:"Theme",act:"Activity",type:"Type"},
+    hi:{title:"सचेतना",sub:{LPS:"निम्न प्राथमिक",HPS:"उच्च प्राथमिक",HS:"हाई स्कूल"}[lv]+" गतिविधि कैलेंडर",mon:"महीना",school:"स्कूल",ga:"कक्षा और क्षेत्र",days:["सोमवार","मंगलवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"],par:"अभिभावक गतिविधियाँ",det:"गतिविधि विवरण",app:"विद्यार्थियों की सराहना",grade:"कक्षा",theme:"विषय",act:"गतिविधि",type:"प्रकार"}}[L];
+  const navy="#1F3A70",teal="#5CC6C9",paper="#FFF9E6",green="#E9F4DC";
+  c.fillStyle="#F3F9EA";c.fillRect(0,0,W,H);
+  // header
+  c.fillStyle="#7A1E1E";c.font="800 64px "+FD;c.textAlign="left";c.textBaseline="alphabetic";
+  const mLabel=m?((L==="kn"?MONTHS.kn:L==="hi"?MONTHS.hi:MONTHS.enL)[+m.slice(5)-1]):"";
+  c.fillText(mLabel||T.mon+": ____________",60,110);
+  c.fillStyle="#C05A1A";c.font="700 40px "+FD;c.fillText(m?m.slice(0,4):"20____",60,160);
+  c.fillStyle=navy;c.font="600 30px "+FB;c.fillText(T.school+": ______________________________",60,215);
+  if(partnersImg.complete&&partnersImg.naturalWidth){const pw=640,ph=pw*partnersImg.naturalHeight/partnersImg.naturalWidth;c.fillStyle="#fff";rr(c,560,40,pw+30,ph+20,16);c.fill();c.drawImage(partnersImg,575,50,pw,ph)}
+  c.textAlign="right";c.fillStyle="#7A1E1E";c.font="800 72px "+FD;c.fillText(T.title,W-60,110);
+  c.fillStyle=navy;c.font="700 32px "+FD;wrapText(c,T.sub,W-60,160,460,40,"right");
+  // column headers
+  const top=270,lx=50,colW=(W-100)/8,gap=10;
+  const heads=[T.ga].concat(T.days,[T.par]);
+  heads.forEach((hd,i)=>{const x=lx+i*colW;c.fillStyle=i===7?teal:navy;rr(c,x+gap/2,top,colW-gap,62,31);c.fill();c.fillStyle="#fff";c.textAlign="center";c.font="700 "+(L==="en"?26:24)+"px "+FD;c.fillText(hd,x+colW/2,top+42)});
+  // rows
+  const rowH=230,rows=5,r0=top+80;
+  let dates=[];if(m){const d=parse(m+"-01");while(iso(d).startsWith(m)){dates.push(new Date(d));d.setDate(d.getDate()+1)}}
+  // assign dates to week rows (Mon-Sat)
+  const grid=[...Array(rows)].map(()=>Array(6).fill(null));
+  if(m){let r=0;dates.forEach(d=>{const dw=d.getDay();if(dw===0){if(r<rows-1&&dates[0]!==d)r++;return}if(r<rows)grid[r][dw-1]=d.getDate()})}
+  for(let r=0;r<rows;r++){
+    const y=r0+r*(rowH+12);
+    c.fillStyle=green;rr(c,lx+gap/2,y,colW-gap,rowH,18);c.fill();
+    c.fillStyle=navy;c.textAlign="left";c.font="600 22px "+FB;c.fillText(T.grade+":",lx+22,y+44);c.fillText("______",lx+22,y+80);c.fillText(T.theme+":",lx+22,y+130);c.fillText("______",lx+22,y+166);
+    for(let i=0;i<6;i++){
+      const x=lx+(i+1)*colW;c.fillStyle=paper;rr(c,x+gap/2,y,colW-gap,rowH,18);c.fill();
+      c.strokeStyle="#C9D6B5";c.lineWidth=2;c.setLineDash([8,6]);rr(c,x+30,y+48,colW-60,88,10);c.stroke();c.setLineDash([]);
+      c.fillStyle=navy;c.font="800 30px "+FD;c.textAlign="left";c.fillText(grid[r][i]?String(grid[r][i]).padStart(2,"0"):"__",x+20,y+38);
+      c.strokeStyle="#9AA8BF";c.lineWidth=2;c.beginPath();c.moveTo(x+24,y+170);c.lineTo(x+colW-24,y+170);c.stroke();
+      c.strokeStyle=teal;c.lineWidth=3;rr(c,x+28,y+184,colW-56,32,16);c.stroke();
+      c.fillStyle="#7DA0A2";c.font="600 16px "+FB;c.textAlign="center";c.fillText(T.type,x+colW/2,y+206);
+    }
+    const x=lx+7*colW;c.fillStyle="#DDEFF0";rr(c,x+gap/2,y,colW-gap,rowH,18);c.fill();
+    c.strokeStyle="#A9CFD1";c.lineWidth=2;c.setLineDash([8,6]);rr(c,x+26,y+24,colW-52,110,10);c.stroke();c.setLineDash([]);
+    c.strokeStyle="#9AA8BF";c.beginPath();c.moveTo(x+26,y+170);c.lineTo(x+colW-26,y+170);c.moveTo(x+26,y+205);c.lineTo(x+colW-26,y+205);c.stroke();
+  }
+  // bottom
+  const by=r0+rows*(rowH+12)+30;
+  c.fillStyle=navy;c.textAlign="left";c.font="800 34px "+FD;
+  c.strokeStyle="#7F8FA8";c.lineWidth=2;c.setLineDash([4,6]);rr(c,50,by+20,440,H-by-70,22);c.stroke();rr(c,520,by+20,W-570,H-by-70,22);c.stroke();c.setLineDash([]);
+  c.fillStyle="#F3F9EA";c.fillRect(80,by,c.measureText(T.app).width+30,44);c.fillRect(550,by,c.measureText(T.det).width+30,44);
+  c.fillStyle=navy;c.fillText(T.app,95,by+34);c.fillText(T.det,565,by+34);
+  const cols=2,per=13,tw=(W-620)/cols,lh=(H-by-140)/per;
+  c.font="700 22px "+FB;
+  for(let ci=0;ci<cols;ci++)for(let i=0;i<per;i++){
+    const x=550+ci*(tw+20),y=by+70+i*lh;
+    c.strokeStyle="#C9D6B5";c.lineWidth=1.5;c.strokeRect(x,y,tw,lh);
+    const n=ci*per+i;let lab="";
+    if(m){const nd=dates.filter(d=>d.getDay()!==0);if(nd[n])lab=String(nd[n].getDate()).padStart(2,"0")}
+    c.fillStyle=navy;c.textAlign="center";c.fillText(lab||"__",x+30,y+lh/2+8);
+    c.beginPath();c.moveTo(x+60,y);c.lineTo(x+60,y+lh);c.stroke();
+  }
+  c.textAlign="center";c.fillStyle="#6B7A93";c.font="600 20px "+FB;c.fillText("Sachetana · Samagra Shikshana Karnataka · DSERT · Mantra4Change",W/2,H-22);
+}
+function wrapText(c,text,x,y,maxW,lh,align){
+  const words=String(text).split(/\s+/);let line="",yy=y,lines=[];
+  for(const w of words){const tst=line?line+" "+w:w;if(c.measureText(tst).width>maxW&&line){lines.push(line);line=w}else line=tst}
+  if(line)lines.push(line);
+  c.textAlign=align||"left";lines.forEach(l=>{c.fillText(l,x,yy);yy+=lh});return yy;
+}
+
+/* ---------- certificate ---------- */
+function openCert(prefDate){
+  const s=prefDate||TODAY, d=day(s)||day(nearestDay());
+  const b=openModal(esc(t("certT")),
+  '<div class="row"><div class="field"><label for="cN">'+esc(t("cName"))+'</label><input id="cN" autocomplete="off" maxlength="60" placeholder="Ananya K"></div><div class="field"><label for="cG">'+esc(t("cGrade"))+'</label><input id="cG" autocomplete="off" maxlength="20" placeholder="4"></div></div>'+
+  '<div class="field"><label for="cS">'+esc(t("cSchool"))+'</label><input id="cS" autocomplete="off" maxlength="90" placeholder="GHPS Hosahalli, Mysuru"></div>'+
+  '<div class="row"><div class="field"><label for="cA">'+esc(t("cAct"))+'</label><input id="cA" maxlength="80"></div><div class="field"><label for="cD">'+esc(t("cDate"))+'</label><input id="cD" type="date"></div></div>'+
+  '<div class="field"><label for="cL">'+esc(t("cLang"))+'</label><select id="cL"><option value="kn">ಕನ್ನಡ</option><option value="en">English</option><option value="hi">हिंदी</option></select></div>'+
+  '<canvas id="cCv" class="cert-prev" width="1754" height="1240" style="aspect-ratio:1754/1240"></canvas>'+
+  '<div class="btns"><button class="btn sun" type="button" id="cBtn">'+esc(t("cBtn"))+'</button><button class="btn" type="button" id="cUp">'+esc(t("cPhoto"))+'</button></div><div id="cMsg"></div>',{sm:true});
+  const cA=document.getElementById("cA"),cD=document.getElementById("cD"),cL=document.getElementById("cL");
+  cL.value=lang; cD.value=s; cA.value=d?(cL.value==="kn"?d.title_kn:d.title_en)||"":"";
+  const sync=()=>{const dd=day(cD.value);if(dd&&!cA.dataset.edited)cA.value=(cL.value==="kn"?dd.title_kn:dd.title_en)||cA.value};
+  cA.oninput=()=>{cA.dataset.edited="1";draw()};
+  const draw=()=>drawCert(document.getElementById("cCv"),{name:document.getElementById("cN").value.trim(),grade:document.getElementById("cG").value.trim(),school:document.getElementById("cS").value.trim(),act:cA.value.trim(),date:cD.value,L:cL.value});
+  ["cN","cG","cS"].forEach(id=>document.getElementById(id).oninput=draw);
+  cD.onchange=()=>{sync();draw()};cL.onchange=()=>{sync();draw()};
+  fontsReady().then(draw);
+  document.getElementById("cBtn").onclick=()=>{
+    const n=document.getElementById("cN").value.trim(),sc=document.getElementById("cS").value.trim(),g=document.getElementById("cG").value.trim();
+    const msg=document.getElementById("cMsg");
+    if(!n||!sc||!g){msg.innerHTML='<div class="err">'+esc(t("cNeed"))+'</div>';return}
+    draw();document.getElementById("cCv").toBlob(bl=>saveFile("Sachetana_Certificate_"+n.replace(/[^\p{L}\p{N}]+/gu,"_")+".png",bl,msg),"image/png");
+  };
+  document.getElementById("cUp").onclick=()=>openUpload(document.getElementById("cS").value.trim());
+}
+function nearestDay(){let s=TODAY;for(let i=0;i<14;i++){if(day(s))return s;s=addDays(s,1)}return TODAY}
+function drawCert(cv,o){
+  const c=cv.getContext("2d"),W=cv.width,H=cv.height,L=o.L;
+  const FD=L==="hi"?'"Baloo 2","Noto Sans Devanagari",sans-serif':'"Baloo Tamma 2","Noto Sans Kannada",sans-serif';
+  const FB=L==="hi"?'"Noto Sans Devanagari",sans-serif':L==="kn"?'"Noto Sans Kannada",sans-serif':'"Nunito Sans",sans-serif';
+  const navy="#1F3A70",gold="#E39B17",green="#3B8A3E";
+  c.fillStyle="#FFFDF5";c.fillRect(0,0,W,H);
+  // sunrise corners
+  const g1=c.createRadialGradient(0,H,10,0,H,520);g1.addColorStop(0,"rgba(242,161,26,.30)");g1.addColorStop(1,"rgba(242,161,26,0)");c.fillStyle=g1;c.fillRect(0,0,W,H);
+  const g2=c.createRadialGradient(W,0,10,W,0,520);g2.addColorStop(0,"rgba(92,198,201,.28)");g2.addColorStop(1,"rgba(92,198,201,0)");c.fillStyle=g2;c.fillRect(0,0,W,H);
+  c.strokeStyle=navy;c.lineWidth=14;c.strokeRect(34,34,W-68,H-68);
+  c.strokeStyle=gold;c.lineWidth=4;c.strokeRect(62,62,W-124,H-124);
+  // dots border
+  c.fillStyle=green;for(let x=100;x<W-90;x+=46){c.beginPath();c.arc(x,84,4,0,7);c.fill();c.beginPath();c.arc(x,H-84,4,0,7);c.fill()}
+  if(partnersImg.complete&&partnersImg.naturalWidth){const pw=820,ph=pw*partnersImg.naturalHeight/partnersImg.naturalWidth;c.drawImage(partnersImg,(W-pw)/2,104,pw,ph)}
+  const TX={
+    en:{h:"Certificate of Appreciation",s:"Sachetana Morning Assembly 2026–27",p:"This certificate is proudly presented to",g:g=>/^\d+$/.test(g)?"Grade "+g:g,of:(g,sc)=>g+", "+sc,b:"for confidently leading and taking part in the morning assembly activity",e:d=>"on "+d+". Keep shining and keep leading!",hm:"Headmaster / Headmistress",ct:"Class teacher"},
+    kn:{h:"ಮೆಚ್ಚುಗೆ ಪತ್ರ",s:"ಸಚೇತನ ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿ 2026–27",p:"ಈ ಮೆಚ್ಚುಗೆ ಪತ್ರವನ್ನು ಹೆಮ್ಮೆಯಿಂದ ನೀಡಲಾಗಿದೆ",g:g=>/^\d+$/.test(g)?g+" ನೇ ತರಗತಿ":g,of:(g,sc)=>sc+" ಶಾಲೆಯ "+g,b:"ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿಯ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ನೇತೃತ್ವ ವಹಿಸಿ ಭಾಗವಹಿಸಿದ್ದಕ್ಕಾಗಿ",e:d=>d+" ರಂದು. ಹೀಗೆಯೇ ಮುನ್ನಡೆಯಿರಿ, ಬೆಳಗಿರಿ!",hm:"ಮುಖ್ಯ ಶಿಕ್ಷಕರು",ct:"ತರಗತಿ ಶಿಕ್ಷಕರು"},
+    hi:{h:"प्रशंसा पत्र",s:"सचेतना प्रातःकालीन सभा 2026–27",p:"यह प्रशंसा पत्र गर्व के साथ प्रदान किया जाता है",g:g=>/^\d+$/.test(g)?"कक्षा "+g:g,of:(g,sc)=>g+", "+sc,b:"को प्रातःकालीन सभा गतिविधि में आत्मविश्वास से नेतृत्व और भागीदारी के लिए",e:d=>d+" को। ऐसे ही चमकते रहो, आगे बढ़ते रहो!",hm:"प्रधानाध्यापक / प्रधानाध्यापिका",ct:"कक्षा शिक्षक"}}[L];
+  const dateTxt=o.date?(()=>{const d=parse(o.date);const ms=L==="kn"?MONTHS.kn:L==="hi"?MONTHS.hi:MONTHS.enL;return d.getDate()+" "+ms[d.getMonth()]+" "+d.getFullYear()})():"__________";
+  c.textAlign="center";c.textBaseline="alphabetic";
+  c.fillStyle="#7A1E1E";c.font="800 92px "+FD;c.fillText(TX.h,W/2,340);
+  c.fillStyle=green;c.font="700 34px "+FD;c.fillText(TX.s,W/2,392);
+  c.fillStyle=navy;c.font="500 32px "+FB;c.fillText(TX.p,W/2,470);
+  // name
+  c.fillStyle=navy;c.font="800 "+(o.name&&o.name.length>22?72:88)+"px "+FD;c.fillText(o.name||"__________________",W/2,575);
+  c.strokeStyle=gold;c.lineWidth=4;c.beginPath();c.moveTo(W/2-420,600);c.lineTo(W/2+420,600);c.stroke();
+  c.font="700 36px "+FD;c.fillStyle=navy;c.fillText(TX.of(TX.g(o.grade||"___"),o.school||"____________________"),W/2,660);
+  c.font="500 30px "+FB;c.fillStyle="#3A4A66";let y=wrapText(c,TX.b,W/2,725,1300,44,"center");
+  c.font="800 44px "+FD;c.fillStyle="#C05A1A";c.fillText("“"+(o.act||"…")+"”",W/2,y+18);
+  c.font="500 30px "+FB;c.fillStyle="#3A4A66";c.fillText(TX.e(dateTxt),W/2,y+78);
+  // signatures
+  c.strokeStyle=navy;c.lineWidth=2;
+  [[360,TX.ct],[W-360,TX.hm]].forEach(([x,l])=>{c.beginPath();c.moveTo(x-200,H-180);c.lineTo(x+200,H-180);c.stroke();c.fillStyle=navy;c.font="600 26px "+FB;c.fillText(l,x,H-140)});
+  // seal
+  c.save();c.translate(W/2,H-185);c.fillStyle=gold;c.beginPath();for(let i=0;i<24;i++){const a=i*Math.PI/12,r=i%2?62:74;c.lineTo(Math.cos(a)*r,Math.sin(a)*r)}c.closePath();c.fill();
+  c.fillStyle="#FFF6DA";c.beginPath();c.arc(0,0,52,0,7);c.fill();c.fillStyle="#7A1E1E";c.font="800 26px "+'"Baloo Tamma 2",sans-serif';c.fillText("ಸಚೇತನ",0,10);c.restore();
+}
+
+/* ---------- photo wall ---------- */
+const DEFAULT_PHOTOS=[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24].map(n=>({src:"photos/p"+String(n).padStart(2,"0")+".jpg",school:null,place:null}));
+let uploaded=[], pool=[], ptr=0, wallTimer=null, galleryUnsub=null;
+function buildPool(){pool=uploaded.map(u=>({src:"/_blob/"+u.assetId,school:u.school,place:u.place})).concat(DEFAULT_PHOTOS)}
+function capFor(p){return '<b>'+esc(p.school||t("calPhoto"))+'</b>'+(p.place?'<span>'+esc(p.place)+'</span>':(p.school?'':'<span>Sachetana 2025–26</span>'))}
+function initWall(){
+  buildPool();
+  const wall=document.getElementById("wall");
+  wall.innerHTML=[0,1,2].map(i=>'<figure class="spot" style="margin:0"><img alt="" decoding="async"><img alt="" class="out" decoding="async"><figcaption class="cap"></figcaption>'+(i===0?'<div class="timer"><i></i></div>':'')+'</figure>').join("");
+  [0,1,2].forEach(i=>showIn(i,pool[i%pool.length],true));ptr=3;
+  if(wallTimer)clearInterval(wallTimer);
+  wallTimer=setInterval(rotate,10000);restartTimer();
+}
+function restartTimer(){const i=document.querySelector(".timer i");if(!i)return;i.classList.remove("run");void i.offsetWidth;i.classList.add("run")}
+function showIn(i,p,instant){
+  const fig=document.querySelectorAll("#wall .spot")[i];if(!fig||!p)return;
+  const imgs=fig.querySelectorAll("img"),vis=imgs[0].classList.contains("out")?imgs[1]:imgs[0],hid=vis===imgs[0]?imgs[1]:imgs[0];
+  const alt=(p.school||t("calPhoto"))+(p.place?", "+p.place:"");
+  if(instant){vis.src=p.src;vis.alt=alt;fig.querySelector(".cap").innerHTML=capFor(p);return}
+  const pre=new Image();pre.onload=pre.onerror=()=>{hid.src=p.src;hid.alt=alt;hid.classList.remove("out");vis.classList.add("out");fig.querySelector(".cap").innerHTML=capFor(p)};pre.src=p.src;
+}
+function rotate(){if(document.hidden)return;[0,1,2].forEach(i=>{showIn(i,pool[ptr%pool.length]);ptr++});restartTimer()}
+async function initGallery(){
+  initWall();
+  const db=await cap("db");if(!db)return;
+  try{
+    galleryUnsub=db.collection("gallery").orderBy("ts","desc").limit(200).onSnapshot(snap=>{
+      uploaded=snap.docs.map(d=>Object.assign({id:d.id},d.data())).filter(u=>u.assetId);
+      const before=pool.length;buildPool();if(pool.length!==before&&uploaded.length){ptr=0}
+    },()=>{});
+  }catch(e){}
+  const user=await cap("user");
+  try{if(user&&user.canEdit&&await user.canEdit())document.getElementById("manageBtn").hidden=false}catch(e){}
+}
+function openUpload(prefSchool){
+  const b=openModal(esc(t("upT")),'<div class="field"><label for="uS">'+esc(t("upSchool"))+'</label><input id="uS" maxlength="90" autocomplete="off"></div><div class="row"><div class="field"><label for="uP">'+esc(t("upPlace"))+'</label><input id="uP" maxlength="90" autocomplete="off"></div><div class="field"><label for="uL">'+esc(t("level"))+'</label><select id="uL">'+["LPS","HPS","HS"].map(l=>'<option'+(l===level?" selected":"")+'>'+l+'</option>').join("")+'</select></div></div><div class="field"><label for="uF">'+esc(t("upFiles"))+'</label><input id="uF" type="file" accept="image/*" multiple></div><label style="display:flex;gap:8px;align-items:flex-start;font-size:14px"><input id="uC" type="checkbox" style="margin-top:4px"> <span>'+esc(t("upConsent"))+'</span></label><div class="thumbs" id="uT"></div><div class="btns"><button class="btn sun" type="button" id="uBtn">'+esc(t("upBtn"))+'</button></div><div id="uMsg"></div>',{sm:true});
+  if(prefSchool)document.getElementById("uS").value=prefSchool;
+  const uF=document.getElementById("uF");
+  uF.onchange=()=>{const fs=[...uF.files].slice(0,5);document.getElementById("uT").innerHTML=fs.map(f=>'<figure><img src="'+URL.createObjectURL(f)+'" alt=""></figure>').join("")};
+  cap("assets").then(a=>{if(!a)document.getElementById("uMsg").innerHTML='<div class="err">'+esc(t("upNo"))+'</div>'});
+  document.getElementById("uBtn").onclick=async()=>{
+    const msg=document.getElementById("uMsg"),school=document.getElementById("uS").value.trim(),place=document.getElementById("uP").value.trim(),fs=[...uF.files].slice(0,5);
+    if(!school||!fs.length||!document.getElementById("uC").checked){msg.innerHTML='<div class="err">'+esc(t("upNeed"))+'</div>';return}
+    const [assets,db]=await Promise.all([cap("assets"),cap("db")]);
+    if(!assets||!db){msg.innerHTML='<div class="err">'+esc(t("upNo"))+'</div>';return}
+    const btn=document.getElementById("uBtn");btn.disabled=true;
+    try{
+      for(let i=0;i<fs.length;i++){
+        msg.innerHTML='<div class="note">'+esc(t("uploading"))+' '+(i+1)+' / '+fs.length+'</div>';
+        const blob=await shrink(fs[i]);
+        const r=await assets.upload(blob,{type:"image/jpeg"});
+        await db.collection("gallery").add({assetId:r.id,school,place,level:document.getElementById("uL").value,ts:Date.now()});
+      }
+      msg.innerHTML='<div class="ok">'+esc(t("upDone"))+'</div>';uF.value="";document.getElementById("uT").innerHTML="";
+      ptr=0;setTimeout(rotate,600);
+    }catch(e){msg.innerHTML='<div class="err">'+esc((e&&(e.message||e.code))||"Upload failed")+'</div>'}
+    btn.disabled=false;
+  };
+}
+async function shrink(file){
+  try{
+    const bmp=await createImageBitmap(file);const s=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+    const cv=document.createElement("canvas");cv.width=Math.round(bmp.width*s);cv.height=Math.round(bmp.height*s);
+    cv.getContext("2d").drawImage(bmp,0,0,cv.width,cv.height);
+    return await new Promise(r=>cv.toBlob(r,"image/jpeg",.82));
+  }catch(e){return file}
+}
+async function openManage(){
+  const b=openModal(esc(t("mgT")),'<div class="thumbs" id="mg"></div>',{sm:true});
+  const draw=()=>{document.getElementById("mg").innerHTML=uploaded.length?uploaded.map(u=>'<figure><img src="/_blob/'+esc(u.assetId)+'" alt=""><figcaption>'+esc(u.school)+(u.place?' · '+esc(u.place):'')+'</figcaption><button type="button" data-rm="'+esc(u.id)+'">'+esc(t("remove"))+'</button></figure>').join(""):'<p>'+esc(t("mgNone"))+'</p>';
+    document.querySelectorAll("[data-rm]").forEach(x=>x.onclick=async()=>{const u=uploaded.find(v=>v.id===x.dataset.rm);const [db,assets]=await Promise.all([cap("db"),cap("assets")]);try{await db.collection("gallery").doc(u.id).delete();if(assets)await assets.delete(u.assetId).catch(()=>null);uploaded=uploaded.filter(v=>v.id!==u.id);buildPool();draw()}catch(e){x.textContent="!"}})};
+  draw();
+}
+
+/* ---------- help tour ---------- */
+const TOUR=[["#homeBtn","t0"],["#langSw","t1"],["#levels","t2"],["#strip","t3"],["#todayBtns","t4"],["#weekCard","t5"],["#tools","t6"],["#gallerySec","t7"],["#helpBtn","t8"]];
+let tourOn=false,tourI=0;
+function startTour(){closeModal(true);tourOn=true;tourI=0;showTour()}
+function endTour(){tourOn=false;document.querySelectorAll(".tour-hi,.tour-box").forEach(e=>e.remove());store.set("sach-toured",1)}
+function showTour(){
+  document.querySelectorAll(".tour-hi,.tour-box").forEach(e=>e.remove());
+  let [sel,key]=TOUR[tourI];let el=document.querySelector(sel);if(!el){el=document.querySelector("#strip")}
+  el.scrollIntoView({block:"center",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  setTimeout(()=>{
+    const r=el.getBoundingClientRect(),hi=document.createElement("div");hi.className="tour-hi";
+    Object.assign(hi.style,{left:(r.left-6)+"px",top:(r.top-6)+"px",width:(r.width+12)+"px",height:(r.height+12)+"px"});
+    const box=document.createElement("div");box.className="tour-box";box.setAttribute("role","dialog");box.setAttribute("aria-live","polite");
+    box.innerHTML='<h4>'+esc(t(key))+'</h4><p>'+esc(t(key+"d"))+'</p><div class="tour-nav"><span>'+(tourI+1)+' '+esc(t("of"))+' '+TOUR.length+'</span>'+(tourI?'<button class="btn ghost" type="button" id="tB">'+esc(t("backB"))+'</button>':'')+'<button class="btn pri" type="button" id="tN">'+esc(tourI===TOUR.length-1?t("finish"):t("nextB"))+'</button></div><button class="x" type="button" id="tX" aria-label="'+esc(t("close"))+'" style="position:absolute;top:8px;right:8px;width:30px;height:30px;font-size:18px">×</button>';
+    box.style.position="fixed";
+    document.body.append(hi,box);
+    const bh=box.offsetHeight,vw=innerWidth,vh=innerHeight;
+    let top=r.bottom+16;if(top+bh>vh-12)top=Math.max(12,r.top-bh-16);if(top<12)top=12;
+    let left=Math.min(Math.max(16,r.left),vw-box.offsetWidth-16);
+    box.style.top=top+"px";box.style.left=left+"px";
+    document.getElementById("tN").onclick=()=>{if(tourI===TOUR.length-1)endTour();else{tourI++;showTour()}};
+    const bb=document.getElementById("tB");if(bb)bb.onclick=()=>{tourI--;showTour()};
+    document.getElementById("tX").onclick=endTour;document.getElementById("tN").focus();
+  },matchMedia("(prefers-reduced-motion: reduce)").matches?30:380);
+}
+addEventListener("resize",()=>{if(tourOn)showTour()});
+
+/* ---------- events ---------- */
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-act]");
+  if(a){e.stopPropagation();const s=a.dataset.d;if(a.dataset.act==="res")openResources(s);else if(a.dataset.act==="exp")openExplain(s);else toggleDone(s,a);return}
+  const dEl=e.target.closest("[data-day]");
+  if(dEl&&!dEl.classList.contains("today")&&!tourOn){openDay(dEl.dataset.day)}
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches(".day.faded")){e.preventDefault();openDay(e.target.dataset.day)}});
+document.querySelectorAll("#langSw button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;store.set("sach-lang",lang);applyI18n();renderStrip();wallCaps();if(tourOn)showTour()});
+function wallCaps(){document.querySelectorAll("#wall .spot").forEach((f,i)=>{const p=pool[(ptr-3+i+pool.length*10)%pool.length];if(p&&!p.school)f.querySelector(".cap").innerHTML=capFor(p)})}
+document.querySelectorAll(".lvl").forEach(b=>b.onclick=()=>{if(DATA)openCalendar(b.dataset.level)});
+document.getElementById("helpBtn").onclick=startTour;
+function goHome(){if(tourOn)endTour();closeModal(true);scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});document.getElementById("homeBtn").focus()}
+document.getElementById("homeBtn").onclick=goHome;
+document.getElementById("logoHome").onclick=goHome;
+document.getElementById("tDownload").onclick=openDownload;
+document.getElementById("tFormat").onclick=openFormat;
+document.getElementById("tCert").onclick=()=>openCert();
+document.getElementById("tUpload").onclick=()=>openUpload();
+document.getElementById("upBtn2").onclick=()=>openUpload();
+document.getElementById("manageBtn").onclick=openManage;
+
+/* ---------- boot ---------- */
+applyI18n();
+initGallery();
+fetch("calendar-data.json").then(r=>r.json()).then(j=>{DATA=j;renderStrip();if(!store.get("sach-toured",0))setTimeout(startTour,900)}).catch(()=>{document.getElementById("strip").innerHTML='<div class="card err">Calendar data could not load. Refresh the page.</div>'});
+})();
+</script>
